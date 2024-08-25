@@ -6,7 +6,9 @@ export interface Chats {
 export enum UserType {
     Hero,
     Narration,
-    KimSeongMin
+    KangSeongMin,
+    KimMinji,
+    Unknown
 }
 
 export const UserDictionary: {
@@ -22,8 +24,16 @@ export const UserDictionary: {
         name: '나레이션',
         image: ''
     },
-    [UserType.KimSeongMin]: {
-        name: '김성민 팀장',
+    [UserType.KangSeongMin]: {
+        name: '강성민 팀장',
         image: 'image/char2.png',
+    },
+    [UserType.KimMinji]: {
+        name: '김민지',
+        image: 'image/char1.png',
+    },
+    [UserType.Unknown]: {
+        name: '??',
+        image: 'image/char4.png',
     }
 }
