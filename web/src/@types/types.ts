@@ -1,6 +1,7 @@
 export interface Chats {
     userType: UserType;
     message: string;
+    music?: string;
 }
 
 export enum UserType {

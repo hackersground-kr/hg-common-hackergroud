@@ -4,6 +4,7 @@ import {Chats, UserDictionary} from "@src/@types/types";
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import TypingText from "@src/component/TypingText";
+import PlaySong from '@src/designsystem/util/PlaySong';
 
 interface ScenePageProps {
     backgroundUrl: string;
@@ -35,6 +36,7 @@ export default function ScenePage(
 
     return (
         <S.Container>
+            <PlaySong path={chat.music}/>
             <Background url={backgroundUrl}/>
             <S.Content>
                 <div
