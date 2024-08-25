@@ -9,6 +9,10 @@ export default function PlayPage() {
     const location = useLocation();
     const name = location.state.name;
 
+    function nextScene() {
+        setScene(scene + 1);
+    }
+
     return (
         <>
             {scene === 0 && (
@@ -50,12 +54,10 @@ export default function PlayPage() {
                         }
                     ]}
                     onEnded={() => {
-                        setScene(1);
+                        nextScene();
                     }}
                 />
-
-            )
-            }
+            )}
             {scene === 1 && (
                 <ScenePage
                     backgroundUrl={'image/bg4.png'}
@@ -82,7 +84,7 @@ export default function PlayPage() {
                         }
                     ]}
                     onEnded={() => {
-                        setScene(2);
+                        nextScene();
                     }}
                 />
             )}
@@ -96,7 +98,7 @@ export default function PlayPage() {
                         }
                     ]}
                     onEnded={() => {
-                        setScene(3);
+                        nextScene();
                     }}
                 />
             )}
@@ -130,7 +132,7 @@ export default function PlayPage() {
                         }
                     ]}
                     onEnded={() => {
-                        setScene(4);
+                        nextScene();
                     }}
                 />
             )}
@@ -164,7 +166,8 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '이때 큰 소리를 듣고 누군가 방문을 두들인다'
+                            message: '이때 큰 소리를 듣고 누군가 방문을 두들인다',
+                            music: 'music/knock.mp3'
                         },
                         {
                             userType: UserType.Unknown,
@@ -236,7 +239,7 @@ export default function PlayPage() {
                         }
                     ]}
                     onEnded={() => {
-                        setScene(5);
+                        nextScene();
                     }}
                 />
             )}

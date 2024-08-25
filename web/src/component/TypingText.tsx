@@ -59,7 +59,7 @@ export default function TypingText(
                 gap: 8
             }}
         >
-            <span>{displayText}</span>
+            <span>{displayText === '' ? '.' : displayText}</span>
             {isEnded && (
                 <img
                     style={{

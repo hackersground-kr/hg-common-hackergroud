@@ -58,7 +58,6 @@ export default function ScenePage(
                         <S.Name>
                             {user.name ?? name}
                         </S.Name>
-                        {/*하.. 이런 열심히 준비했는데 탈락이라니*/}
                         <TypingText
                             text={chat.message}
                             speed={50}
