@@ -15,8 +15,7 @@ export const UserDictionary: {
     }
 } = {
     [UserType.Hero]: {
-
-        image: 'image/char2.png',
+        image: 'image/char3.png',
     },
     [UserType.Narration]: {
         name: '나레이션',

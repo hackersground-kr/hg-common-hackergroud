@@ -3,9 +3,10 @@ import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
 
 export default function PlayPage() {
+
     return (
         <ScenePage
-            backgroundUrl={'image/bg1.webp'}
+            backgroundUrl={'image/bg3.png'}
             chats={[
                 {
                     userType: UserType.Hero,
@@ -16,7 +17,7 @@ export default function PlayPage() {
                     message: '평소보다 더 잘 일어난 박병춘은 회사를 가기위해 샤워를 하고 나와 업무 확인을 하기위해 폰을 본다.'
                 }
             ]}
-            onEnd={() => {
+            onEnded={() => {
 
             }}
         />

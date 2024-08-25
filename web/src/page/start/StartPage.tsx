@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 
 export default function StartPage() {
 
-    const [startFlow, setStartFlow] = useState(4);
+    const [startFlow, setStartFlow] = useState(0);
     const [name, setName] = useState('');
     const navigate = useNavigate();
 
@@ -106,7 +106,11 @@ export default function StartPage() {
                             left: '50%'
                         }}
                         onClick={() => {
-                            navigate('play');
+                            navigate('play', {
+                                state: {
+                                    name
+                                }
+                            });
                         }}
                     >
                         시작하기
