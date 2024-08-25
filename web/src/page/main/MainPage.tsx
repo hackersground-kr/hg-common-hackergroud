@@ -1,9 +1,10 @@
 import * as S from './MainPage.style';
+import {Background} from "@src/component/Background.style";
 
 export default function MainPage() {
     return (
         <S.Container>
-            <S.Background/>
+            <Background url={'image/bg1.webp'}/>
             <S.Content>
                 <div
                     style={{

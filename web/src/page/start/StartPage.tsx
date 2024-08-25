@@ -1,21 +1,26 @@
 import * as S from './StartPage.style';
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {Background} from "@src/component/Background.style";
+import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
+import {AppStateContext} from "@provider/theme/AppStateContext";
 
 export default function StartPage() {
 
-    const [flow, setFlow] = useState(0);
+    const {flow, setFlow} = useContext(AppStateContext);
+    const [startFlow, setStartFlow] = useState(0);
 
     useEffect(() => {
         setTimeout(() => {
-            setFlow(1);
+            setStartFlow(1);
         }, 900);
         setTimeout(() => {
-            setFlow(2);
+            setStartFlow(2);
         }, 1400);
     }, []);
 
     return (
         <S.Container>
+            <Background url={'image/bg2.png'}/>
             <S.TitleContainer>
                 <div
                     style={{
@@ -25,7 +30,7 @@ export default function StartPage() {
                 >
                     백수였던
                 </div>
-                {flow >= 1 && (
+                {startFlow >= 1 && (
                     <div
                         style={{
                             fontSize: 38,
@@ -36,7 +41,7 @@ export default function StartPage() {
                         내가 이세계에선
                     </div>
                 )}
-                {flow >= 2 && (
+                {startFlow >= 2 && (
                     <div
                         style={{
                             fontSize: 68,
@@ -48,9 +53,22 @@ export default function StartPage() {
                     </div>
                 )}
             </S.TitleContainer>
-            <S.StartButton>
+            <S.StartButton
+                style={{
+                    bottom: 108
+                }}
+                onClick={() => {
+                    setFlow('main');
+                }}
+            >
                 시작하기
-                <img style={{ marginTop: 4 }} src={'icon/RightArrow.png'} width={18}/>
+                <ExpandRight
+                    style={{
+                        marginTop: -1.5
+                    }}
+                    fill={'white'}
+                />
+                {/*<img style={{marginTop: 8}} src={'icon/RightArrow.png'} width={18}/>*/}
             </S.StartButton>
         </S.Container>
     );

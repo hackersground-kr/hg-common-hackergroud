@@ -8,20 +8,6 @@ export const Container = styled.div`
     position: relative;
 `;
 
-export const Background = styled.div`
-    background: url(image/bg1.webp) no-repeat 50% 50%;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    filter: blur(5px);
-    transform: scale(1.03);
-
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-`;
-
 export const Content = styled.div`
     // layout
     display: flex;
