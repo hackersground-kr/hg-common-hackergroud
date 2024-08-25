@@ -19,4 +19,17 @@ export const GlobalStyle = createGlobalStyle`
             visibility: hidden;
         }
     }
+
+    .fade-in-up {
+        opacity: 0; /* 처음에 투명하게 시작 */
+        transform: translateY(20px); /* 약간 아래에서 시작 */
+        animation: fadeInUp 1s ease-out forwards; /* 1초 동안 애니메이션 실행 */
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1; /* 완전히 보이게 */
+            transform: translateY(0); /* 제자리로 이동 */
+        }
+    }
 `;
