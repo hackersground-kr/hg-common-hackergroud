@@ -1,0 +1,26 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - network
+
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:3000
+    depends_on:
+      - backend
+    networks:
+      - network
+
+networks:
+  network:

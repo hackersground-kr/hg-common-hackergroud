@@ -3,11 +3,13 @@ import {useContext, useEffect, useState} from "react";
 import {Background} from "@src/component/Background.style";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {AppStateContext} from "@provider/theme/AppStateContext";
+import {useNavigate} from "react-router-dom";
 
 export default function StartPage() {
 
-    const {flow, setFlow} = useContext(AppStateContext);
-    const [startFlow, setStartFlow] = useState(0);
+    const [startFlow, setStartFlow] = useState(4);
+    const [name, setName] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         setTimeout(() => {
@@ -16,6 +18,12 @@ export default function StartPage() {
         setTimeout(() => {
             setStartFlow(2);
         }, 1400);
+        setTimeout(() => {
+            setStartFlow(3);
+        }, 1900);
+        setTimeout(() => {
+            setStartFlow(4);
+        }, 2400);
     }, []);
 
     return (
@@ -53,23 +61,65 @@ export default function StartPage() {
                     </div>
                 )}
             </S.TitleContainer>
-            <S.StartButton
-                style={{
-                    bottom: 108
-                }}
-                onClick={() => {
-                    setFlow('main');
-                }}
-            >
-                시작하기
-                <ExpandRight
-                    style={{
-                        marginTop: -1.5
-                    }}
-                    fill={'white'}
-                />
-                {/*<img style={{marginTop: 8}} src={'icon/RightArrow.png'} width={18}/>*/}
-            </S.StartButton>
+            {startFlow >= 3 && (
+                <div
+                    className={'fade-in-up'}
+                >
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: "absolute",
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            bottom: 212,
+                            alignItems: 'center',
+                            gap: 8
+                        }}
+                    >
+                        <div
+                            style={{
+                                color: 'white',
+                                textShadow: '0 4px 4px rgba(0, 0, 0, 0.1)',
+                                fontSize: 18
+                            }}
+                        >이름
+                        </div>
+                        <S.NameInput
+                            type={"text"}
+                            placeholder={'이름을 입력해 주세요'}
+                            value={name}
+                            onChange={(e) => {
+                                setName(e.target.value);
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+            {startFlow >= 4 && name !== '' && (
+                <div
+                    className={'fade-in-up'}
+                >
+                    <S.StartButton
+                        style={{
+                            bottom: 108,
+                            left: '50%'
+                        }}
+                        onClick={() => {
+                            navigate('play');
+                        }}
+                    >
+                        시작하기
+                        <ExpandRight
+                            style={{
+                                marginTop: -1.5
+                            }}
+                            fill={'white'}
+                        />
+                        {/*<img style={{marginTop: 8}} src={'icon/RightArrow.png'} width={18}/>*/}
+                    </S.StartButton>
+                </div>
+            )}
         </S.Container>
     );
 }

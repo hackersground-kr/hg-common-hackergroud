@@ -9,10 +9,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <USColorProvider>
-            <AppStateProvider>
-                <App/>
-            </AppStateProvider>
-        </USColorProvider>
+        <App/>
     </React.StrictMode>
 );
