@@ -6,6 +6,6 @@ RUN npm install --silent
 
 COPY . /app
 
-RUN npm run build
+EXPOSE 3000
 
-ENTRYPOINT ["PORT=80", "npm", "start"]
+ENTRYPOINT ["npm", "start"]
