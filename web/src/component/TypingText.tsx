@@ -23,17 +23,22 @@ export default function TypingText(
 
     useEffect(() => {
         window.onkeydown = (e: any) => {
-            if (isEnded && (e.key === 'Enter' || e.key === ' ')) {
-                onEnded();
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (isEnded) {
+                    onEnded();
+                } else {
+                    setDisplayText(text);
+                    setIsEnded(true);
+                }
             }
         }
-    }, [isEnded, onEnded]);
+    }, [isEnded, onEnded, text]);
 
     useEffect(() => {
         let currentIndex = 0;
         const intervalId = setInterval(() => {
             const t = text[currentIndex];
-            if (t !== undefined) {
+            if (t !== undefined && !isEnded) {
                 setDisplayText(prev => prev + t);
                 currentIndex += 1;
             }
@@ -44,7 +49,7 @@ export default function TypingText(
         }, speed);
 
         return () => clearInterval(intervalId);
-    }, [speed, onEnded, text]);
+    }, [speed, onEnded, text, isEnded]);
 
     return (
         <div
