@@ -1,11 +1,16 @@
 export interface Chats {
     userType: UserType;
     message: string;
+    music?: string;
+    vibration?: boolean;
 }
 
 export enum UserType {
     Hero,
-    Narration
+    Narration,
+    KangSeongMin,
+    KimMinji,
+    Unknown
 }
 
 export const UserDictionary: {
@@ -15,11 +20,22 @@ export const UserDictionary: {
     }
 } = {
     [UserType.Hero]: {
-
-        image: 'image/char2.png',
+        image: 'image/char3.png',
     },
     [UserType.Narration]: {
         name: '나레이션',
         image: ''
+    },
+    [UserType.KangSeongMin]: {
+        name: '강성민 팀장',
+        image: 'image/char2.png',
+    },
+    [UserType.KimMinji]: {
+        name: '김민지',
+        image: 'image/char1.png',
+    },
+    [UserType.Unknown]: {
+        name: '??',
+        image: 'image/char4.png',
     }
 }
