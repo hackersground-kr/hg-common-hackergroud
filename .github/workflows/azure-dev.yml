@@ -35,9 +35,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: |
+          cd server
+          ./gradlew build -x test
+
 
       - name: Install azd
         uses: Azure/setup-azd@v1.0.0
