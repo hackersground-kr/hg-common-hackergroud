@@ -9,10 +9,6 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from "@src/routes";
 
 function App() {
-  useEffect(() => {
-    fetch("localhost:8080/test").then((res) => console.log(res));
-  }, []);
-
   return (
     <USColorProvider>
       <AppStateProvider>
