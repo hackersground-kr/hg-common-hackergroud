@@ -3,25 +3,23 @@ import Preview from "@designsystem/preview/Preview";
 import USColorProvider from "@provider/theme/USColorProvider";
 import {GlobalStyle} from "@style/globalStyle";
 import StartPage from "@src/page/start/StartPage";
-import MainPage from "@src/page/main/MainPage";
+import ScenePage from "@src/page/play/scene/ScenePage";
 import AppStateProvider from "@provider/theme/AppStateProvider";
-import {AppStateContext} from "@provider/theme/AppStateContext";
+import {BrowserRouter} from "react-router-dom";
+import Routes from "@src/routes";
 
 function App() {
 
-    const {flow, setFlow} = useContext(AppStateContext);
-
     return (
-        <>
-            {flow === 'start' && (
-                <StartPage/>
-            )}
-            {flow === 'main' && (
-                <MainPage/>
-            )}
-            <GlobalStyle/>
-            {/*<MainPage/>*/}
-        </>
+
+        <USColorProvider>
+            <AppStateProvider>
+                <BrowserRouter>
+                    <GlobalStyle/>
+                    <Routes/>
+                </BrowserRouter>
+            </AppStateProvider>
+        </USColorProvider>
     );
 }
 
