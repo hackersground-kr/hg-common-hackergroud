@@ -18,14 +18,15 @@ export default function TypingText(
 
     useEffect(() => {
         setDisplayText('');
+        setIsEnded(false);
     }, [text]);
 
     useEffect(() => {
-        window.addEventListener('keydown', (e) => {
+        window.onkeydown = (e: any) => {
             if (isEnded && (e.key === 'Enter' || e.key === ' ')) {
                 onEnded();
             }
-        });
+        }
     }, [isEnded, onEnded]);
 
     useEffect(() => {
