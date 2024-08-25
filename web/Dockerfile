@@ -8,4 +8,4 @@ COPY . /app
 
 RUN npm run build
 
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["PORT=80", "npm", "start"]
