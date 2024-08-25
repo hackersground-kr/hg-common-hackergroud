@@ -10,6 +10,8 @@ export enum UserType {
     Narration,
     KangSeongMin,
     KimMinji,
+    KimChunBae,
+    HongGilDong,
     Unknown
 }
 
@@ -33,6 +35,14 @@ export const UserDictionary: {
     [UserType.KimMinji]: {
         name: '김민지',
         image: 'image/char1.png',
+    },
+    [UserType.KimChunBae]: {
+        name: '김춘배 이장',
+        image: 'image/char2.png',
+    },
+    [UserType.HongGilDong]: {
+        name: '홍길동',
+        image: 'image/char2.png',
     },
     [UserType.Unknown]: {
         name: '??',

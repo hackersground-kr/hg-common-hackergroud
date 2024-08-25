@@ -243,6 +243,135 @@ export default function PlayPage() {
                     }}
                 />
             )}
+            {scene === 5 && (
+                <ScenePage
+                    backgroundUrl={'image/bg6.webp'}
+                    chats={[
+                        {
+                            userType: UserType.KimMinji,
+                            message: '시장님 마을이장 김춘배씨 입니다.'
+                        },
+                        {
+                            userType: UserType.KimChunBae,
+                            message: '(격앙된 목소리로) 안녕하세요, 시장님! 저는 이 마을의 이장, 김춘배입니다.'
+                        },
+                        {
+                            userType: UserType.KimChunBae,
+                            message: '제발 도와주십시오! 요즘 마을이 정말 말라 비틀어지고 있어요! 다들 도망가듯 떠나고 있어요! 인구소멸을 해결하기 위한 시장님의 특출난 아이디어가 필요합니다…',
+                            vibration: true
+                        },
+                        {
+                            userType: UserType.KimChunBae,
+                            message: '이렇게 점점 시간이 지나다보면 저희 마을이 사라질 수도 있을 것 같습니다…..'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '(뭔가 의성의 인구소멸을 해결하기 위한 좋은 아이디어가 없을까…?)'
+                            // TODO: Add Input
+                        },
+                        {
+                            userType: UserType.KimChunBae,
+                            message: 'GPT의 답변... ex. 와 지존 쩌는 아이디어 입니다 행님 ㄷㄷ'
+                        },
+                        {
+                            userType: UserType.KimMinji,
+                            message: '시장님 역시 최고에요!!'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 6 && (
+                <ScenePage
+                    backgroundUrl={'image/bg7.png'}
+                    chats={[
+                        {
+                            userType: UserType.KimMinji,
+                            message: '시장님 의성군의 청년들입니다. 오늘 시장님에게 듣고싶은 이야기가 많은걸로 알고 있어요.'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '(살짝 부담을 가지고 컨퍼런스홀로 들어간다)'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '청년 농부 홍길동과 몇명의 청년들이 앉아있다'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '청년 여러분 안녕하세요 반갑습니다. 이시간은 여러분들과 제가 만나서 저희 의성군을 더 좋은 의성으로 만들기 위해 모인자리입니다.'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '여러분들의 의견을 편하게 말해주시면 제가 최대한 반영할 수 있도록 돕겠습니다.'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '(박수소리)',
+                            music: 'music/clap.mp3'
+                        },
+                        {
+                            userType: UserType.HongGilDong,
+                            message: '청년들이 저희 의성에 안오는 이유가 뭐라고 생각하십니까?'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '(의성이 고령화 1등이야..? 몰랐는데… 일단 아는척 하자)'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '아..알죠…ㅎㅎ'
+                        },
+                        {
+                            userType: UserType.HongGilDong,
+                            message: '청년들이 저희 의성에 안오는 이유가 뭐라고 생각하십니까?'
+                        },
+                        {
+                            // TODO: Add Select form
+                            userType: UserType.Hero,
+                            message: '1. 의성이 너무 시골이여서 그렇죠…?\n' +
+                                '2. 놀거리가 없어서 그렇죠…?\n' +
+                                '3. 일자리가 없어서 그렇죠…?'
+                        },
+                        {
+                            userType: UserType.HongGilDong,
+                            message: '맞습니다.  {선택} 때문입니다.'
+                        },
+                        {
+                            userType: UserType.HongGilDong,
+                            message: '시장님은 문제를 인식하고 있는데 왜 개선을 하지 않습니까?',
+                            vibration: true
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '홍길동의 공격적인 발언으로 사람들이 웅성웅성거린다'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '아.....'
+                        },
+                        {
+                            userType: UserType.KimMinji,
+                            message: '(작게 속삭이며) 시장님 뭔가 대책이 있으신가요..?'
+                        },
+                        {
+                            // TODO : Add Input form
+                            userType: UserType.Hero,
+                            message: ''
+                        },
+                        // TODO: Add GPT
+                        {
+                            userType: UserType.KimMinji,
+                            message: '시장님 또 한건 처리하셨군요!!!'
+                        },
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
         </>
     );
 }
