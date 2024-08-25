@@ -2,6 +2,7 @@ export interface Chats {
     userType: UserType;
     message: string;
     music?: string;
+    vibration?: boolean;
 }
 
 export enum UserType {

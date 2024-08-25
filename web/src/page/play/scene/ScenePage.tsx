@@ -42,9 +42,10 @@ export default function ScenePage(
                 <div
                     style={{
                         display: 'flex',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        animation: chat.vibration?'vibrate .1s linear 10':'none',
                     }}
-                    className={'fade-in-up'}
+                    className={chat.vibration? '': 'fade-in-up'}
                 >
                     <img
                         style={{

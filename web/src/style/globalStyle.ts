@@ -32,4 +32,11 @@ export const GlobalStyle = createGlobalStyle`
             transform: translateY(0); /* 제자리로 이동 */
         }
     }
+    @keyframes vibrate {
+        0% { transform: translate(0); }
+        25% { transform: translate(2px, 2px); }
+        50% { transform: translate(0); }
+        75% { transform: translate(-2px, -2px); }
+        100% { transform: translate(0); }
+    }
 `;

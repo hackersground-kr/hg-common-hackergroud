@@ -17,7 +17,8 @@ export default function PlayPage() {
                     chats={[
                         {
                             userType: UserType.Hero,
-                            message: '흠... 오늘따라 왜 이렇게 상쾌하지?'
+                            message: '흠... 오늘따라 왜 이렇게 상쾌하지?',
+                            vibration: true,
                         },
                         {
                             userType: UserType.Narration,
