@@ -1,5 +1,6 @@
 package com.server
 
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/ai")
+@CrossOrigin(origins = ["*"])
 class AIController(
     private val aiService: AiService
 ) {
@@ -33,5 +35,13 @@ class AIController(
     ): Any{
         return aiService.sin3(request.text)
     }
+
+    @PostMapping("/4")
+    fun sin4(
+        @RequestBody sin4Request: Sin4Request
+    ): Any {
+        return aiService.sin4(sin4Request)
+    }
+
 
 }
