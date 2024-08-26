@@ -342,6 +342,12 @@ ex) git remote add origin https://github.com/yeseong0412/common.git
 git push origin main
 ```
 
+오류가 발생한다면?
+
+```bash
+git push -f origin
+```
+
 push가 완료될때까지 잠시 기다릴게요.
 
 <img width="830" alt="image" src="https://github.com/user-attachments/assets/cabfb582-e350-48b3-89e8-d38001e04259">
