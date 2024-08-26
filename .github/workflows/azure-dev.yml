@@ -45,7 +45,7 @@ jobs:
       - name: Log in to Azure
         uses: azure/login@v1
         with:
-          auth-type: USER_ASSIGNED
+          auth-type: IDENTITY
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
@@ -67,14 +67,27 @@ jobs:
 
       - name: Create Container App Environment
         run: az containerapp env create \
-          --name ${{ env.AZURE_ENV_NAME }} \
-          --location ${{ env.AZURE_LOCATION }} \
-          --resource-group rg-${{ env.AZURE_ENV_NAME }}
+          --name ${{ vars.AZURE_ENV_NAME }} \
+          --location ${{ vars.AZURE_LOCATION }} \
+          --resource-group rg-${{ vars.AZURE_ENV_NAME }}
 
       - name: Deploy Server App
         run: az containerapp create \
           --name server-app \
           --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/server:${{ github.sha }} \
-          --environment ${{ env.AZURE_ENV_NAME }} \
-          --resource-group rg-${{ env.AZURE_ENV_NAME }} \
+          --environment ${{ vars.AZURE_ENV_NAME }} \
+          --resource-group rg-${{ vars.AZURE_ENV_NAME }} \
           --ingress 'external'
+
+      - name: Get FQDN From Server
+        inlineScript: echo $(az containerapp show \
+          --resource-group rg-${{  }} \
+          --name ca-server \
+          --query properties.configuration.ingress.fqdn)
+
+      - name: Build and Push Docker Image
+        run: |
+          cd ..
+          cd web
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/web:${{ github.sha }}
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/web:${{ github.sha }}
