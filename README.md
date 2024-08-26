@@ -236,6 +236,8 @@ Select an Azure Subscription to use 를 물을껀데 그때 Hackers Ground 리�
 
 Select an Azure location to use 를 물어보면 13. (Asia Pacific) Korea South (koreacentral) 에 초록불이 들어오도록 한 뒤 앤터를 클릭합니다.
 
+3~4분 기다렸는데 화면이 그대로라면 control + c를 동시에 누른 뒤 다시 azd up를 해주세요
+
 그리고 기다려주세요. 5~10분정도 소모됩니다.
 ```bash
 Deploying services (azd deploy)
