@@ -75,7 +75,7 @@ jobs:
 
       - name: Deploy Web App
         run: |
-          echo $FQDN
+          echo $REACT_APP_SERVER_URL
           az containerapp create --name web-app --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/web:${{ github.sha }} --environment ${{ vars.AZURE_ENV_NAME }} --resource-group rg-${{ vars.AZURE_ENV_NAME }} --target-port 3000 --ingress 'external' --registry-server ${{ secrets.REGISTRY_LOGIN_SERVER }} --registry-username ${{ secrets.REGISTRY_USERNAME }} --registry-password ${{ secrets.REGISTRY_PASSWORD }} --env-vars REACT_APP_SERVER_URL=$REACT_APP_SERVER_URL
 
       
