@@ -95,10 +95,10 @@ module appsEnv './shared/apps-env.bicep' = {
 module web './app/web.bicep' = {
   name: 'web'
   params: {
-    name: '${abbrs.appContainerApps}web-${resourceToken}'
+    name: '${abbrs.appContainerApps}web'
     location: location
     tags: tags
-    identityName: '${abbrs.managedIdentityUserAssignedIdentities}web-${resourceToken}'
+    identityName: '${abbrs.managedIdentityUserAssignedIdentities}web'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: appsEnv.outputs.name
     containerRegistryName: registry.outputs.name
@@ -114,17 +114,17 @@ module web './app/web.bicep' = {
 module server './app/server.bicep' = {
   name: 'server'
   params: {
-    name: '${abbrs.appContainerApps}server-${resourceToken}'
+    name: '${abbrs.appContainerApps}server'
     location: location
     tags: tags
-    identityName: '${abbrs.managedIdentityUserAssignedIdentities}server-${resourceToken}'
+    identityName: '${abbrs.managedIdentityUserAssignedIdentities}server'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: appsEnv.outputs.name
     containerRegistryName: registry.outputs.name
     exists: serverExists
     appDefinition: serverDefinition
     allowedOrigins: [
-      'https://${abbrs.appContainerApps}web-${resourceToken}.${appsEnv.outputs.domain}'
+      'https://${abbrs.appContainerApps}web.${appsEnv.outputs.domain}'
     ]
   }
   scope: rg
