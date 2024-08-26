@@ -44,7 +44,7 @@ export default function ScenePage(
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        animation: chat.vibration?'vibrate .1s linear 10':'none',
+                        animation: chat.vibration?'vibrate .1s linear 10': undefined,
                     }}
                     className={chat.vibration? '': 'fade-in-up'}
                 >
