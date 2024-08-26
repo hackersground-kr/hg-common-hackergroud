@@ -80,7 +80,7 @@ jobs:
           --ingress 'external'
 
       - name: Get FQDN From Server
-        inlineScript: echo $(az containerapp show \
+        run: echo $(az containerapp show \
           --resource-group rg-${{  }} \
           --name ca-server \
           --query properties.configuration.ingress.fqdn)
