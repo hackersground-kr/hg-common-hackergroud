@@ -198,7 +198,7 @@ azd auth login --check-status
 로그인이 끝났다면 로그인이 재대로 되었는지 명령어를 쳐 확인해주세요.
 로그인이 안됬다면 될때까지 저 과정을 무한반복하세요 그만두지 말고 무한반복하세요.
 
-로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다. (이미 최상위 폴더이면 사용하지 않아도 됩니다 yeseong0412@MacBook-Pro-YS  ~/Downloads/hg-common-hackergroud-main  )
+로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다. (이미 최상위 폴더이면[최상단 폴더는 옆에 저런 형식이며 hg-common-hackergroud-main이면 됩니다] 사용하지 않아도 됩니다 yeseong0412@MacBook-Pro-YS  ~/Downloads/hg-common-hackergroud-main  )
 
 ```bash
 cd
@@ -213,6 +213,8 @@ azd init -e {본인리소스그룹}
 
 ex) 
 azd init -e common-hackergroud
+
+본인 리소스 그룹 확인은 [여기서 가능합니다!](https://portal.azure.com/#browse/resourcegroups)
 
 위 명령어를 실행하고 아래 사진과 같이 나온다면 B 단계로 넘어가시면 됩니다.
 
