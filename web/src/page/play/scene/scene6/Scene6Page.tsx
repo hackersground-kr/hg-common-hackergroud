@@ -3,11 +3,11 @@ import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
 import React, {useState} from "react";
 import {Row} from "@designsystem/util/StyledFlex";
-import * as S from './Scene6Page.style';
 import {Button} from "@src/component/Button.style";
 import Repository from "@src/repository/Repository";
 import useScene from "@hook/useScene";
 import Response from "@repository/Response";
+import {Input} from "@src/component/Input.style";
 
 export default function Scene6Page(
     {
@@ -41,10 +41,11 @@ export default function Scene6Page(
             disabledKeyDown: true,
             children: (action) => {
                 return <Row $alignItems={'center'} $columnGap={4}>
-                    <S.Input
+                    <Input
                         value={input} onChange={e => setInput(e.target.value)}
                         type="text"
                         onKeyDown={event => event.stopPropagation()}
+                        placeholder={'내용을 입력해 주세요'}
                     />
                     <Button disabled={!input} onClick={async () => {
                         if (!input) {
