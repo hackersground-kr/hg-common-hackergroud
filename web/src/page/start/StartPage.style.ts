@@ -36,7 +36,7 @@ export const NameInput = styled.input`
     font-size: 20px;
 
     &::placeholder {
-        color: rgba(255, 255, 255, 0.46);
+        color: rgba(255, 255, 255, 0.7);
     }
 `;
 

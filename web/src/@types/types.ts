@@ -45,15 +45,15 @@ export const UserDictionary: {
     },
     [UserType.KimChunBae]: {
         name: '김춘배 이장',
-        image: 'image/char2.png',
+        image: 'image/char7.png',
     },
     [UserType.HongGilDong]: {
         name: '홍길동',
-        image: 'image/char2.png',
+        image: 'image/char5.png',
     },
     [UserType.ParkJinSoo]: {
         name: '박진수',
-        image: 'image/char5.png',
+        image: 'image/char8.png',
     },
     [UserType.Unknown]: {
         name: '??',
