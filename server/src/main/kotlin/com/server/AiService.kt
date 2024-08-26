@@ -2,8 +2,10 @@ package com.server
 
 import org.springframework.ai.azure.openai.AzureOpenAiChatModel
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.CrossOrigin
 
 @Service
+@CrossOrigin(origins = ["*"])
 class AiService(
     private val chatModel: AzureOpenAiChatModel
 ) {
