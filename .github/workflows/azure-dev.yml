@@ -1,17 +1,10 @@
 on:
   workflow_dispatch:
   push:
-    # Run when commits are pushed to mainline branch (main or master)
-    # Set this to the mainline branch you are using
     branches:
       - main
       - master
 
-# GitHub Actions workflow to deploy to Azure using azd
-# To configure required secrets for connecting to Azure, simply run `azd pipeline config`
-
-# Set up permissions for deploying with secretless Azure federated credentials
-# https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Clinux#set-up-azure-login-with-openid-connect-authentication
 permissions:
   id-token: write
   contents: read
@@ -35,8 +28,8 @@ jobs:
   ai:
     azure:
       openai:
-        api-key: ${AZURE_OPENAI_API_KEY}
-        endpoint: ${AZURE_OPENAI_ENDPOINT}
+        api-key: ${KEY}
+        endpoint: ${ENDPOINT}
         chat:
           options:
             deployment-name: gpt-4o
@@ -47,14 +40,12 @@ jobs:
           AZURE_OPENAI_API_KEY: ${{ secrets.KET }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.ENDPOINT }}
 
-
-          
-      - uses: actions/checkout@v3
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           java-version: "21"
           distribution: "zulu"
+
       - name: Build with Gradle
         run: |
           cd server
