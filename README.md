@@ -132,7 +132,6 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 ![image](images/10.png)
 
 프로젝트가 이렇게 켜졌다면 반정도 성공하신겁니다. <br>
-~~여기까지 하셨다면 체크포인트 느낌으로 저한테 해커그라운드 잡담방에 중간정도완료!! 보내주세요...ㅎ 가능하시면...말이죠..~~
 
 
 !중요 도커가 실행중이여야합니다!
@@ -164,6 +163,8 @@ azd auth login --check-status
 로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다.
 
 ```bash
+cd
+cd Downloads/hg-common-hackergroud
 azd init -e common-hackergroud
 ```
 
