@@ -112,7 +112,7 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 
 명령어를 친 뒤 파일에 build 폴더가 생겼다면 성공입니다.
 
-왼쪽 위 빨간 창 닫기 버튼을 통해 인텔리제이 초기화면으로 돌아갑니다.
+닫기 버튼을 통해 인텔리제이 초기화면으로 돌아갑니다.
 
 ![image](images/2.png)
 
@@ -192,7 +192,6 @@ Overwrite with versions from template에 초록 화면을 뜬채로 앤터를 �
 SUCCESS: Your app is ready for the cloud!
 
 라고 명령어창에 떴다면 3/2를 성공하신겁니다.
-~~여기까지오셨다면 3/2 도착이라고 해커그라운드 잡담방에 올려주세요(가능하면요)~~
 
 파일중에 azure.yaml 파일이 있을껍니다.
 
