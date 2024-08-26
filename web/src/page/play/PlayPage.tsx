@@ -3,12 +3,14 @@ import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserDictionary, UserType} from "@src/@types/types";
 import {useLocation} from "react-router-dom";
 import {josa} from "es-hangul";
+import DialogTemplate from "@src/component/dialog/DialogTemplate";
 
 export default function PlayPage() {
 
     const [scene, setScene] = useState(0);
     const location = useLocation();
     const name = location.state.name;
+    const [isShowEndDialog, setIsShowEndDialog] = useState(false)
 
     function nextScene() {
         setScene(scene + 1);
@@ -16,6 +18,13 @@ export default function PlayPage() {
 
     return (
         <>
+            
+            {isShowEndDialog && 
+                <DialogTemplate dismiss={() => {}}>
+                    <div>
+                        
+                    </div>
+                </DialogTemplate>}
             {scene === 0 && (
                 <ScenePage
                     backgroundUrl={'image/bg3.png'}
@@ -536,7 +545,8 @@ export default function PlayPage() {
                         // TODO: (플레이어가 답변한 공략 3개 [서버 API호출])
                     ]}
                     onEnded={() => {
-                        alert('스토리가 종료 되었습니다 짝짝짝~');
+                        // alert('스토리가 종료 되었습니다 짝짝짝~');
+                        setIsShowEndDialog(true)
                     }}
                 />
             )}
