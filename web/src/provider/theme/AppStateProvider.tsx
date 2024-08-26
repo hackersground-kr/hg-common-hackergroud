@@ -1,21 +1,24 @@
 import {ReactNode, useState} from "react";
 import {AppStateContext} from "@provider/theme/AppStateContext";
+import ImgGenReq from "@repository/ImgGenReq";
 
 interface AppStateProps {
     children: ReactNode;
 }
-
-export type appFlow = 'start' | 'main';
 
 const AppStateProvider = (
     {
         children,
     }: AppStateProps
 ) => {
-    const [flow, setFlow] = useState<appFlow>('start');
+    const [req, setReq] = useState<ImgGenReq>({
+        sin1: '',
+        sin2: '',
+        sin3: ''
+    });
 
     return (
-        <AppStateContext.Provider value={{flow, setFlow}}>
+        <AppStateContext.Provider value={{req, setReq}}>
             {children}
         </AppStateContext.Provider>
     );
