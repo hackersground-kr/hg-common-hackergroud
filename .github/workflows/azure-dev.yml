@@ -31,8 +31,7 @@ jobs:
 
       - name: Create application.yml with secrets
         run: |
-          mkdir -p ./src/main/resources
-          cat <<EOF > ./src/main/resources/application.yml
+          cat ./server/src/main/resources/application.yml
           spring:
             ai:
               azure:
@@ -58,7 +57,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd server
-          ./gradlew build -x test
+          ./gradlew build
 
       - name: Install azd
         uses: Azure/setup-azd@v1.0.0
