@@ -178,11 +178,11 @@ https://www.jetbrains.com/ko-kr/idea/download/
 
 <img width="702" alt="image" src="https://github.com/user-attachments/assets/f484b596-efd9-4778-859d-220b1c71d0b6">
 
-JDK가 있으면 17 아무거나 클릭하고 오른쪽 아래 Apply ok 하고 창을 닫습니다.
+JDK가 있으면 아무거나 클릭하고 오른쪽 아래 Apply ok 하고 창을 닫습니다.
 
 <img width="807" alt="image" src="https://github.com/user-attachments/assets/57a6fe54-a415-4f6d-b190-4f5b1edeae37">
 
-JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle OpenJDK로 설정후 Download를 받은 뒤 위의 과정을 다시 시도하세요.
+JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 아무거나 설정후 Download를 받은 뒤 위의 과정을 다시 시도하세요.
 
 될때까지하세요.
 
