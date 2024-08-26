@@ -88,7 +88,18 @@ Quit 클릭해주세요
 
 
 
-위의 가이드처럼 다시 FINISH를 누르고 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
+위의 가이드처럼 다시 FINISH를 누르고 회원가입을 하라면 회원가입
+
+
+https://app.docker.com/signup?state=hKFo2SByOTUxSXJ6WUJoNnE1VWwyX0x3d3Zjb1o0dmc5ZlRfYaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGF4S3hLUnpMdDJYaFBnTlV6Nm5tOEZ1QXNkcy1vczVQo2NpZNkgbHZlOUdHbDhKdFNVcm5lUTFFVnVDMGxiakhkaTluYjk
+
+회원가입 링크입니다.
+
+<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/aed2848c-c6ce-4d3a-86f9-a47032f8ff5b">
+
+이메일, 비번을 설정하고 로그인을 추후 하시면 됩니다.
+
+도커 앱을 킬때 로그인 하라면 로그인 하고 사용하세요.<br>
 
 ### MAC 설치 가이드
 
@@ -114,6 +125,16 @@ https://www.docker.com/products/docker-desktop/
 그후 Docker Desktop을 실행합니다.
 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
 
+https://app.docker.com/signup?state=hKFo2SByOTUxSXJ6WUJoNnE1VWwyX0x3d3Zjb1o0dmc5ZlRfYaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGF4S3hLUnpMdDJYaFBnTlV6Nm5tOEZ1QXNkcy1vczVQo2NpZNkgbHZlOUdHbDhKdFNVcm5lUTFFVnVDMGxiakhkaTluYjk
+
+회원가입 링크입니다.
+
+<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/3e148c96-d886-4ffb-9fda-16da020c561f">
+
+이메일과 비밀번호를 설정하고 회원가입을 진행해주세요.
+
+이메일과 비밀번호는 외워두고 추후 도커 데스크탑 앱을 실행한 뒤 로그인하시면 됩니다.
+
 ## 시작하기
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
@@ -133,7 +154,11 @@ Start 부근 Open...을 클릭해주세요.
 
 아까 다운받아 압축을 해제한 파일을 클릭 후 열기를 눌러주세요.
 
-마우스를 위로 끝까지 올려줍니다.
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Feditor%2Fworkspace-trust&psig=AOvVaw1AmeQfJxiSDgwHb3P1EE8b&ust=1724771918774000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKj-4Z76kogDFQAAAAAdAAAAABAE![image](https://github.com/user-attachments/assets/1206d48d-227e-4e19-af8d-09f907387cbc)
+
+이런 경고가 뜬다면 Yes, I trust the authors 를 클릭해주세요.
+
+그 뒤 마우스를 위로 끝까지 올려줍니다.
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/b1440027-dccd-491f-a598-b525a96c0f08">
 
@@ -173,13 +198,23 @@ azd auth login --check-status
 로그인이 끝났다면 로그인이 재대로 되었는지 명령어를 쳐 확인해주세요.
 로그인이 안됬다면 될때까지 저 과정을 무한반복하세요 그만두지 말고 무한반복하세요.
 
-로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다.
+로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다. (이미 최상위 폴더이면[최상단 폴더는 옆에 저런 형식이며 hg-common-hackergroud-main이면 됩니다] 사용하지 않아도 됩니다 yeseong0412@MacBook-Pro-YS  ~/Downloads/hg-common-hackergroud-main  )
 
 ```bash
 cd
 cd Downloads/hg-common-hackergroud
-azd init -e common-hackergroud
 ```
+
+그리고 하나더 명령어를 실행해줍니다.
+
+```bash
+azd init -e {본인리소스그룹}
+```
+
+ex) 
+azd init -e common-hackergroud
+
+본인 리소스 그룹 확인은 [여기서 가능합니다!](https://portal.azure.com/#browse/resourcegroups)
 
 위 명령어를 실행하고 아래 사진과 같이 나온다면 B 단계로 넘어가시면 됩니다.
 
@@ -232,9 +267,21 @@ services:
  azd up
 ```
 
+혹시 keyvalt 오류가 발생한다면?
+
+```bash
+az keyvault purge --name <key-vault-name>
+```
+
+명령어를 사용해주세요! <br>
+
+ex) az keyvault purge --name asd
+
 Select an Azure Subscription to use 를 물을껀데 그때 Hackers Ground 리소스 그룹을 선택하세요. 선택후 앤터를 누르시면 됩니다.
 
-Select an Azure location to use 를 물어보면 13. (Asia Pacific) Korea South (koreacentral) 에 초록불이 들어오도록 한 뒤 앤터를 클릭합니다.
+Select an Azure location to use 를 물어보면 13. (Asia Pacific) (koreacentral) 에 초록불이 들어오도록 방향키 위 아래로 움직여 맞춘뒤 앤터를 클릭합니다.
+
+3~4분 기다렸는데 화면이 그대로라면 control + c를 동시에 누른 뒤 다시 azd up를 해주세요
 
 그리고 기다려주세요. 5~10분정도 소모됩니다.
 ```bash
@@ -308,6 +355,12 @@ ex) git remote add origin https://github.com/yeseong0412/common.git
 
 ```bash
 git push origin main
+```
+
+오류가 발생한다면?
+
+```bash
+git push origin master
 ```
 
 push가 완료될때까지 잠시 기다릴게요.
@@ -410,8 +463,6 @@ Secrets and variables부분을 클릭하시고 actions를 클릭해주세요.
 **체크리스트**
 - [X] Azure container apps로 배포를 했는가?
 - [X] Github Action, Bicep을 통한 배포 자동화를 성공하였는가?
-
-common 1등 하겠습니다.
 
 
 
