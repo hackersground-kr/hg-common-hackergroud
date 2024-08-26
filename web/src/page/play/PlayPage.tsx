@@ -1,10 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ScenePage from "@src/page/play/scene/ScenePage";
-import {UserDictionary, UserType} from "@src/@types/types";
 import {useLocation} from "react-router-dom";
-import {josa} from "es-hangul";
-import DialogTemplate from "@src/component/dialog/DialogTemplate";
-import PlaySong from "@src/designsystem/util/PlaySong";
 import EndDialog from "@src/component/dialog/enddialog/EndDialog";
 import Scene1Page from "@src/page/play/scene/scene1/Scene1Page";
 import Scene2Page from "@src/page/play/scene/scene2/Scene2Page";
@@ -22,7 +17,7 @@ import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(7);
+    const [scene, setScene] = useState(1);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
@@ -42,9 +37,6 @@ export default function PlayPage() {
     useEffect(() => {
         preloadMusics();
     }, []);
-
-    // ai 1
-    const [ai1Prompt, setAi1Prompt] = useState('');
 
     return (
         <>

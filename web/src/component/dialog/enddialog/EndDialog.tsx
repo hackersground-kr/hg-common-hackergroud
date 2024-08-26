@@ -1,6 +1,6 @@
 import * as S from './EndDialog.style';
 import DialogTemplate from "@src/component/dialog/DialogTemplate";
-import {Column, Row} from "@designsystem/util/StyledFlex";
+import {Column} from "@designsystem/util/StyledFlex";
 import Spacer from "@src/component/spacer/Spacer";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {StartButton} from "@src/component/StartButton.style";
