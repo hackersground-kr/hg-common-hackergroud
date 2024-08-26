@@ -19,19 +19,22 @@ export default function Scene7Page(
     const [selectedReason, setSelectedReason] = useState<string>();
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleComplete = async () => {
         if (!input) {
             alert('내용을 입력해 주세요');
             return;
         }
-
+        setIsLoading(true)
         try {
             const response = await Repository.ai2(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -117,7 +120,7 @@ export default function Scene7Page(
                 return (
                     <Row $alignItems={'center'} $columnGap={4}>
                         <Input value={input} onChange={e => setInput(e.target.value)} type={'text'}/>
-                        <Button onClick={handleComplete} disabled={!input}>완료</Button>
+                        <Button disabled={!input || isLoading} onClick={handleComplete}>완료</Button>
                     </Row>
                 )
             }

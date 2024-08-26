@@ -18,19 +18,22 @@ export default function Scene8Page(
 
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleComplete = async () => {
         if (!input) {
             alert('내용을 입력해 주세요');
             return;
         }
-
+        setIsLoading(true)
         try {
             const response = await Repository.ai1(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -67,7 +70,7 @@ export default function Scene8Page(
                         onKeyDown={event => event.stopPropagation()}
                         placeholder={'내용을 입력해 주세요'}
                     />
-                    <Button disabled={!input} onClick={handleComplete}>완료</Button>
+                    <Button disabled={!input || isLoading} onClick={handleComplete}>완료</Button>
                 </Row>
             }
         },
