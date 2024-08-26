@@ -60,17 +60,17 @@ export default function ScenePage(
                         <S.Name>
                             {user.name ?? name}
                         </S.Name>
-                        {chat.isLoading == true && (
-                            <Loader></Loader>
+                        {chat.isLoading === true && (
+                            <Loader/>
                         )}
-                        {typeof chat.message === "string" && chat.isLoading != true && (
+                        {typeof chat.message === "string" && chat.isLoading !== true && (
                             <TypingText
                                 text={chat.message}
                                 speed={50}
                                 onEnded={handleKeyDown}
                             />
                         )}
-                        {typeof chat.message === "object" && chat.isLoading != true && (
+                        {typeof chat.message === "object" && chat.isLoading !== true && (
                             <SelectText
                                 texts={chat.message}
                                 onEnded={(text: string) => {
