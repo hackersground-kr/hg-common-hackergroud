@@ -342,6 +342,13 @@ ex) git remote add origin https://github.com/yeseong0412/common.git
 git push origin main
 ```
 
+or
+
+```bash
+git push origin master
+```
+
+
 오류가 발생한다면?
 
 ```bash
