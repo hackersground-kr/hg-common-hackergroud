@@ -3,6 +3,7 @@ export interface Chats {
     message: string | string[];
     music?: string;
     vibration?: boolean;
+    isLoading?: boolean;
     callback?: (text: string) => void;
 }
 
