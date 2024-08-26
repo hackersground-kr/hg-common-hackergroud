@@ -39,9 +39,13 @@ export const Name = styled.h1`
 export const Chat = styled.div`
     // layout
     display: flex;
+    flex-direction: column;
     padding: 40px 40px;
+    align-items: center;
     justify-content: center;
     position: relative;
+    text-align: center;
+    gap: 12px;
 
     // style
     color: black;

@@ -1,10 +1,24 @@
+import React from "react";
+
+interface SelectProps {
+    data: string[];
+    onSelect: (item: string) => void;
+}
+
+// interface InputProps {
+//     value: string;
+//     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+// }
+
 export interface Chats {
     userType: UserType;
-    message: string | string[];
+    message: string;
     music?: string;
     vibration?: boolean;
     isLoading?: boolean;
-    callback?: (text: string) => void;
+    select?: SelectProps;
+    // input?: InputProps;
+    children?: React.ReactNode;
 }
 
 export enum UserType {

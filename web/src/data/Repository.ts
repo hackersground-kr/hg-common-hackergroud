@@ -3,7 +3,7 @@ import config from "@src/config";
 
 const usAxios = axios.create({
     baseURL: config.baseUrl,
-})
+});
 
 class Repository {
     async ai1(prompt: string): Promise<Response> {

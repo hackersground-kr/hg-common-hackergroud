@@ -6,15 +6,6 @@ import Routes from "@src/routes";
 import axios from "axios";
 
 function App() {
-    useEffect(() => {
-        axios
-            .get(`${process.env.SERVER_BASE_URL ?? "http://localhost:8080"}/test`)
-            .then((res) => {
-                console.log(res.data);
-            })
-            .catch(e => console.log(e));
-    }, []);
-
     return (
         <AppStateProvider>
             <BrowserRouter>

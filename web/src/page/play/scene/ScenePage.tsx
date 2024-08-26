@@ -63,21 +63,22 @@ export default function ScenePage(
                         {chat.isLoading === true && (
                             <Loader/>
                         )}
-                        {typeof chat.message === "string" && chat.isLoading !== true && (
+                        {!chat.select && chat.isLoading !== true && (
                             <TypingText
                                 text={chat.message}
                                 speed={50}
                                 onEnded={handleKeyDown}
                             />
                         )}
-                        {typeof chat.message === "object" && chat.isLoading !== true && (
+                        {chat.select && chat.isLoading !== true && (
                             <SelectText
-                                texts={chat.message}
+                                texts={chat.select.data}
                                 onEnded={(text: string) => {
-                                    chat?.callback && chat.callback(text)
+                                    chat.select?.onSelect?.(text);
                                 }}
                             />
                         )}
+                        {chat.children && chat.children}
                     </S.Chat>
                 </div>
             </S.Content>
