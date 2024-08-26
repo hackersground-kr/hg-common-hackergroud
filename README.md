@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4a694753-0ea1-4745-bc5b-40e02ffc2d37)# `common` - `백수였던 내가 이세계에선 의성 시장?`
+# `common` - `백수였던 내가 이세계에선 의성 시장?`
 
 해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
 
@@ -125,75 +125,27 @@ https://www.docker.com/products/docker-desktop/
 
 다운을 받은 파일을 압축 해제해주세요.
 
-압축 해제 후 인텔리제이를 켜주세요.
+<img width="1007" alt="스크린샷 2024-08-26 오후 11 27 56" src="https://github.com/user-attachments/assets/973a1bb5-396b-4dbd-bd0d-6764e9c33c1e">
 
-![image](images/2.png)
+Start 부근 Open...을 클릭해주세요.
 
-오른쪽 위에 open 이라 적힌걸 클릭합니다.
+<img width="1512" alt="스크린샷 2024-08-26 오후 11 29 37" src="https://github.com/user-attachments/assets/9696e4e6-ed31-410e-b8d2-4a05fe744cff">
 
-![image](images/3.png)
+아까 다운받아 압축을 해제한 파일을 클릭 후 열기를 눌러주세요.
 
-다운로드로 이동하여 저희가 아까 받은 파일을 클릭한 뒤 서버 폴더를 찾아 클릭 후 열기를 클릭 합니다. (이미지를 참조해주세요)
+마우스를 위로 끝까지 올려줍니다.
 
-![image](images/4.png)
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/b1440027-dccd-491f-a598-b525a96c0f08">
 
-이미지처럼 경고창이 뜬다면 Trust Project 클릭해주세요.
-
-<img width="208" alt="스크린샷 2024-08-26 오후 2 37 48" src="https://github.com/user-attachments/assets/cbd577f5-2419-4719-b713-dd784d70d1a0">
-
-오른쪽 위 톱니바퀴모양 (설정)을 클릭한 뒤 Project Constructure를 클릭해주세요.
-
-<img width="755" alt="image" src="https://github.com/user-attachments/assets/84149ac1-4bb9-4a33-84f4-b021544c7d8a">
-
-사진에서 처럼 NoSDK가 나온다면 그 빨간 부분 클릭후
-
-<img width="702" alt="image" src="https://github.com/user-attachments/assets/f484b596-efd9-4778-859d-220b1c71d0b6">
-
-JDK가 있으면 아무거나 클릭하고 오른쪽 아래 Apply ok 하고 창을 닫습니다.
-
-<img width="807" alt="image" src="https://github.com/user-attachments/assets/57a6fe54-a415-4f6d-b190-4f5b1edeae37">
-
-JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 아무거나 설정후 Download를 받은 뒤 위의 과정을 다시 시도하세요.
-
-될때까지하세요.
-
-왼쪽 아래에 |>_| 이렇게 생긴 명령어 창을 클릭해줍니다.
+왼쪽 위에 Terminel new Terminel를 선택해주세요.
 
 명령어 창에 아래와 같이 명령어를 적어주세요
-
-```bash
-./gradlew build -x test
-```
-
-명령어를 친 뒤 파일에 build 폴더가 생겼다면 성공입니다.
-
-닫기 버튼을 통해 인텔리제이 초기화면으로 돌아갑니다.
-보통의 닫기 버튼은 오른쪽 위에나 왼쪽 위에 X자 혹은 마우스커서를 가져다대면 빨강으로 토글되거나 애초에 빨강인 버튼을 클릭하시면 초기화면으로 돌아가시게 됩니다.
-
-![image](images/2.png)
-
-다시 오른쪽 위 open을 클릭한 뒤 다운로드에서 저희가 아까 받은 파일을 클릭하고 열기를 클릭해주세요. 
-
-![image](images/8.png)
-
-(이미지를 참조해 열기를 클릭해주세요.)
-
-![image](images/9.png)
-
-이미지처럼 경고창이 뜬다면 Trust Project 클릭해주세요.
-
-![image](images/10.png)
-
-프로젝트가 이렇게 켜졌다면 반정도 성공하신겁니다. <br>
-
 
 !중요 도커가 실행중이여야합니다!
 도커 어케 실행해요?
 도커 데스크탑 키고요 왼쪽 아래 도커엔진에 스타트 ㅣ> 저런거 비슷하게 생긴거 클릭하시면 실행됩니다.
 
-![image](images/11.png)
-
-오른쪽 아래에 네모 안에 |>_| 이렇게 생긴거 클릭해주세요.
+이제 명령어로 azd를 설치할껍니다.
 
 윈도우인 경우 
 ```Powershell
@@ -342,7 +294,7 @@ Repository 이름을 common이라고 적어주세요.
 
 그림에서 https://github.com/{따라하시는분 깃허브 ID}/common.git 부분을 복사해주세요.
 
-그리고 다시 인텔리제이로 돌아가
+그리고 다시 VSC(비주얼스튜디오코드)로 돌아가
 
 명령어(터미널) 창에 아래 명령어를 작성해주세요
 
@@ -383,7 +335,7 @@ https://portal.azure.com/#@hackersground.kr/resource/subscriptions/bfa39d86-1058
 
 <img width="327" alt="image" src="https://github.com/user-attachments/assets/520a4341-00f9-4d06-97d2-3b9a0357ebde">
 
-다시 인텔리제이 명령어(터미널) 창으로 돌아가주세요.
+다시 다시 VSC(비주얼스튜디오코드) 명령어(터미널) 창으로 돌아가주세요.
 
 ```bash
 azd pipeline config
