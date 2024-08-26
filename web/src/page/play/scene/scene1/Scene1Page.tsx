@@ -50,7 +50,8 @@ export default function Scene1Page(
         },
         {
             userType: UserType.Narration,
-            message: `${josa(name, '은/는')} 급하게 준비를 마치고 회사로 달려간다.`
+            message: `${josa(name, '은/는')} 급하게 준비를 마치고 회사로 달려간다.`,
+            music: "music/running.mp3"
         }
     ], onEnded);
 

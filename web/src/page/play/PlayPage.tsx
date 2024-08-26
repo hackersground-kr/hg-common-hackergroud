@@ -17,7 +17,7 @@ import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(12);
+    const [scene, setScene] = useState(9);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
@@ -27,7 +27,7 @@ export default function PlayPage() {
     }
 
     function preloadMusics() {
-        const audioSource = ["phone_vibe.mp3", "knock.mp3", "door_open.mp3", "clap.mp3", "end.mp3", "car_draft.mp3"]
+        const audioSource = ["phone_vibe.mp3", "knock.mp3", "door_open.mp3", "clap.mp3", "end.mp3", "car_draft.mp3", "running.mp3"]
         audioSource.forEach((item) => {
             const audio = new Audio(`music/${item}`)
             audio.load();  // add this line

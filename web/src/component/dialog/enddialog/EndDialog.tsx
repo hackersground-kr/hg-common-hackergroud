@@ -27,7 +27,7 @@ export default function EndDialog(
 
     return (
         <DialogTemplate dismiss={dismiss}>
-            <PlaySong path='/music/end.mp3'/>
+            <PlaySong path='/music/end.mp3' loop={true}/>
             <S.Container>
                 <S.Content>
                     <Column $gap={4}>
