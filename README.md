@@ -32,6 +32,8 @@
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 준비사항이 의미가 없군요..
 
+### WINDOW 설치 가이드 (MAC OS인 경우 하단으로 스크롤 하여 "MAC 설치 가이드"를 따르세요.)
+
 https://www.jetbrains.com/ko-kr/idea/download/ 에 접근하여 스크롤을 내려 ![image](https://github.com/user-attachments/assets/014e1396-cc7f-4558-81d3-b8dc4e53a532)
 
 빨간색으로 마킹 된 버튼을 눌러 다운로드 합니다.
@@ -85,31 +87,58 @@ https://www.docker.com/products/docker-desktop/
 그후 다시 왼쪽 검색창에서 docker 를 검색후 실행합니다.
 ![image](https://github.com/user-attachments/assets/f0e7d107-d1e7-4cb7-90b1-d619ece40d38)
 
-위의 가이드처럼 다시 FINISH를 누르고 도커를 종료합니다.
 
 
-위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
+위의 가이드처럼 다시 FINISH를 누르고 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
 
-인텔리제이와 도커 데스크탑의 경우 본인에게 맞는 설치방법을 고르세요.<br>
+### MAC 설치 가이드
 
-window에서 설치
+https://www.jetbrains.com/ko-kr/idea/download/
+
+![image](https://github.com/user-attachments/assets/42717722-8c29-411e-afc2-75d4ee181c52)
+
+첨부한 링크를 들어가서 다운로드쪽 파란걸 확인해주세요
+
+<br><br>
+
+만약이 쿠키 관련 창이 뜨면 알잘딱 해주세요..ㅠㅠㅠㅠ
+
+
+본인 컴퓨터에 맞게 깔아주시면 좋을 것 같습니다.
+
+<br><br>
+
+본인 컴퓨터가 Intel인지 Apple Silicon인지 모른다?
+
+<br><br>
+
+저거 선택하면 바로 다운로드 시작됩니다.
+
+![image](https://github.com/user-attachments/assets/8f25dc7f-545a-43b3-880d-d36994e4e3f3)
+
+
+다운 다받으셨으면 더블클릭으로 열어주시고요
+
+![image](https://github.com/user-attachments/assets/0503a881-a8c6-440d-8acc-02950819b768)
+
+마우스를 꾹 눌러 Application으로 이동시켜주세요.
+
 <br>
-https://aday7.tistory.com/entry/IntelliJ-설치-및-기본-환경-설정-가이드
-<br>
-https://velog.io/@bi-sz/IntelliJ-환경-구성하기
-<br>
-mac에서 설치
-<br>
-https://priming.tistory.com/124
-<br>
-https://code-lab1.tistory.com/260
-<br>
-참조하시면 좋을 것 같습니다.
+
+그러면 인텔리제이 Mac 설치가 완료됩니다.
 
 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
 <br>
 
-다 설치가 되셨다면 둘다 한번씩 실행해보세요.
+아래 이미지에서 오른쪽 Download for Mac - [Apple Silicon 또는 Intel Chip을 자신의 노트북에 맞게 설치합니다.] 을 누릅니다.
+<img width="922" alt="스크린샷 2024-08-26 오후 6 41 07" src="https://github.com/user-attachments/assets/50f07285-8fa4-4511-b1f9-3b71aeef6590">
+
+
+그 후 파일의 설치가 모두 끝났다면 파일을 실행해 아래 왼쪽의 이미지를 오른쪽 폴더로 끌어 이동시킵니다.
+<img width="739" alt="스크린샷 2024-08-26 오후 6 48 34" src="https://github.com/user-attachments/assets/9895cd30-b185-40e0-b988-4b2c34718522">
+
+그후 Docker Desktop을 실행합니다.
+회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
 
 ## 시작하기
 
