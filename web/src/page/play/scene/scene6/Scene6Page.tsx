@@ -82,7 +82,7 @@ export default function Scene6Page(
             handleKeyDown();
             return;
         }
-        if (result?.state) {
+        if (Boolean(result?.state)) {
             handleKeyDown();
         } else {
             setSelectedIdx(prev => prev - 1);
