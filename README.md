@@ -267,6 +267,16 @@ services:
  azd up
 ```
 
+혹시 keyvalt 오류가 발생한다면?
+
+```bash
+az keyvault purge --name <key-vault-name>
+```
+
+명령어를 사용해주세요! <br>
+
+ex) az keyvault purge --name asd
+
 Select an Azure Subscription to use 를 물을껀데 그때 Hackers Ground 리소스 그룹을 선택하세요. 선택후 앤터를 누르시면 됩니다.
 
 Select an Azure location to use 를 물어보면 13. (Asia Pacific) (koreacentral) 에 초록불이 들어오도록 방향키 위 아래로 움직여 맞춘뒤 앤터를 클릭합니다.
