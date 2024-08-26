@@ -61,6 +61,12 @@ https://www.docker.com/products/docker-desktop/
 위 링크를 클릭해 사이트에 접속 후 약 3초 기다렸다가 아래 이미지와 같이 다운로드합니다.
 ![image](https://github.com/user-attachments/assets/8f40a35d-7304-473a-965f-5ddedc81a5bd)
 
+그후 다운로드 된 파일을 실행해 오른쪽 하단의 "OK"버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/15f5a484-037e-47d9-8f59-e696bb1268fb)
+
+설치를 기다린 후 CLOSE AND RESTART 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/34d9ec42-a6fa-46ca-9496-0da071f32419)
+
 
 위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
 
