@@ -54,7 +54,7 @@ export default function PlayPage() {
             {scene === 11 && <Scene11Page name={name} onEnded={nextScene}/>}
             {scene === 12 && <Scene12Page name={name} onEnded={nextScene}/>}
             {scene === 13 && <Scene13Page name={name} onEnded={() => {
-                setIsShowEndDialog(true)
+                setIsShowEndDialog(true);
             }}/>}
         </>
     );
