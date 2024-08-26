@@ -30,14 +30,11 @@
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
-<br>
-인텔리제이, 도커 데스크탑, 도커 엔진, Azure 계정 (Hackerground에 권한이 있는), 깃허브 계정, 자바 jdk-17 , 맥북으로 배포 절차를 구성하였습니다 맥북으로 진행해주세요.
-<br>
 준비사항이 의미가 없군요..
 
 https://www.jetbrains.com/ko-kr/idea/download/
 <br>
-https://docs.docker.com/desktop/install/mac-install/
+https://www.docker.com/products/docker-desktop/
 
 위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
 
@@ -115,7 +112,7 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 
 명령어를 친 뒤 파일에 build 폴더가 생겼다면 성공입니다.
 
-왼쪽 위 빨간 창 닫기 버튼을 통해 인텔리제이 초기화면으로 돌아갑니다.
+닫기 버튼을 통해 인텔리제이 초기화면으로 돌아갑니다.
 
 ![image](images/2.png)
 
@@ -132,7 +129,6 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 ![image](images/10.png)
 
 프로젝트가 이렇게 켜졌다면 반정도 성공하신겁니다. <br>
-~~여기까지 하셨다면 체크포인트 느낌으로 저한테 해커그라운드 잡담방에 중간정도완료!! 보내주세요...ㅎ 가능하시면...말이죠..~~
 
 
 !중요 도커가 실행중이여야합니다!
@@ -141,6 +137,13 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 ![image](images/11.png)
 
 오른쪽 아래에 네모 안에 |>_| 이렇게 생긴거 클릭해주세요.
+
+윈도우인 경우
+```Powershell
+winget install microsoft.azd
+```
+
+맥북인 경우
 
 ```bash
 curl -fsSL https://aka.ms/install-azd.sh | bash
@@ -164,6 +167,8 @@ azd auth login --check-status
 로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다.
 
 ```bash
+cd
+cd Downloads/hg-common-hackergroud
 azd init -e common-hackergroud
 ```
 
@@ -187,7 +192,6 @@ Overwrite with versions from template에 초록 화면을 뜬채로 앤터를 �
 SUCCESS: Your app is ready for the cloud!
 
 라고 명령어창에 떴다면 3/2를 성공하신겁니다.
-~~여기까지오셨다면 3/2 도착이라고 해커그라운드 잡담방에 올려주세요(가능하면요)~~
 
 파일중에 azure.yaml 파일이 있을껍니다.
 

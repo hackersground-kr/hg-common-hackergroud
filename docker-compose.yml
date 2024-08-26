@@ -8,7 +8,9 @@ services:
     ports:
       - 8080:8080
     networks:
-      - network
+      - common
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   frontend:
     build:
@@ -20,7 +22,8 @@ services:
     depends_on:
       - backend
     networks:
-      - network
+      - common
 
 networks:
-  network:
+  common:
+    driver: bridge
