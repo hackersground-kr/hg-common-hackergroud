@@ -29,11 +29,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/checkout@v3
-      - run: mkdir -p ./src/main/resources
-      - run: touch ./src/main/resources/application.yml
-      - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yml
-      - run: cat ./src/main/resources/application.yml
+      - name: Create application.yml
+        run: |
+          mkdir -p ./src/main/resources
+          cat <<EOF > ./src/main/resources/application.yml
+          spring:
+            ai:
+              azure:
+                openai:
+                  api-key: ${ { secrets.OPENAI_API_KEY } }
+                  endpoint: ${ { secrets.OPENAI_ENDPOINT } }
+                  chat:
+                    options:
+                      deployment-name: gpt-4o
+                  image:
+                    options:
+                      deployment-name: dall-e-3
+          EOF
+
 
       - uses: actions/checkout@v3
       - name: Set up JDK 21
