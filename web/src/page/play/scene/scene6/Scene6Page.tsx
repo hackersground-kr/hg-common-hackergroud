@@ -1,13 +1,14 @@
 import {SharedSceneProps} from "@src/page/play/scene/SharedSceneProps";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {Row} from "@designsystem/util/StyledFlex";
 import {Button} from "@src/component/Button.style";
 import Repository from "@src/repository/Repository";
 import useScene from "@hook/useScene";
 import Response from "@repository/Response";
 import {Input} from "@src/component/Input.style";
+import {AppStateContext} from "@provider/theme/AppStateContext";
 
 export default function Scene6Page(
     {
@@ -17,7 +18,8 @@ export default function Scene6Page(
 ) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const {setReq} = useContext(AppStateContext);
 
     const handleComplete = async () => {
         if (!input) {
@@ -29,6 +31,15 @@ export default function Scene6Page(
             const response = await Repository.ai1(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
+            if (!setReq) {
+                return;
+            }
+            setReq(i => {
+                return {
+                    ...i,
+                    sin1: response.message
+                }
+            });
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
         } finally {
