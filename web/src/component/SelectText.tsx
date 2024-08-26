@@ -53,17 +53,18 @@ export default function SelectText(
                 >
                     <span
                         style={{
-                            opacity: idx == selectIndex ? 1 : 0.5,
+                            opacity: idx === selectIndex ? 1 : 0.5,
                         }}
                     >{text}</span>
                     <img
                         style={{
                             alignSelf: 'center',
-                            visibility: idx == selectIndex ? 'visible' : 'hidden',
+                            visibility: idx === selectIndex ? 'visible' : 'hidden',
                         }}
                         src={'polygon/chat-indicator.png'}
                         width={7}
                         height={10}
+                        alt={'chat indicator'}
                     />
                 </div>
             ))}
