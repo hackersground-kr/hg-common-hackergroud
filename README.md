@@ -33,6 +33,16 @@
 <br>
 인텔리제이, 도커 데스크탑, 도커 엔진, Azure 계정 (Hackerground에 권한이 있는), 깃허브 계정, 자바 jdk-17 , 맥북으로 배포 절차를 구성하였습니다 맥북으로 진행해주세요.
 
+준비사항이 의미가 없군요..
+
+https://www.jetbrains.com/ko-kr/idea/download/
+https://docs.docker.com/desktop/install/mac-install/
+
+위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.
+회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.
+
+다 설치가 되셨다면 둘다 한번씩 실행해보세요.
+
 ## 시작하기
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
@@ -57,6 +67,24 @@
 ![image](images/4.png)
 
 이미지처럼 경고창이 뜬다면 Trust Project 클릭해주세요.
+
+<img width="208" alt="스크린샷 2024-08-26 오후 2 37 48" src="https://github.com/user-attachments/assets/cbd577f5-2419-4719-b713-dd784d70d1a0">
+
+오른쪽 위 톱니바퀴모양 (설정)을 클릭한 뒤 Project Constructor를 클릭해주세요.
+
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/84149ac1-4bb9-4a33-84f4-b021544c7d8a">
+
+사진에서 처럼 NoSDK가 나온다면 그 빨간 부분 클릭후
+
+<img width="702" alt="image" src="https://github.com/user-attachments/assets/f484b596-efd9-4778-859d-220b1c71d0b6">
+
+JDK가 있으면 17 아무거나 클릭하고 오른쪽 아래 Apply ok 하고 창을 닫습니다.
+
+<img width="807" alt="image" src="https://github.com/user-attachments/assets/57a6fe54-a415-4f6d-b190-4f5b1edeae37">
+
+JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle OpenJDK로 설정후 Download를 받은 뒤 위의 과정을 다시 시도하세요.
+
+될때까지하세요.
 
 왼쪽 아래에 |>_| 이렇게 생긴 명령어 창을 클릭해줍니다.
 
@@ -142,7 +170,7 @@ SUCCESS: Your app is ready for the cloud!
 라고 명령어창에 떴다면 3/2를 성공하신겁니다.
 ~~여기까지오셨다면 3/2 도착이라고 해커그라운드 잡담방에 올려주세요(가능하면요)~~
 
-파일중에 azure.ymal 파일이 있을껍니다.
+파일중에 azure.yaml 파일이 있을껍니다.
 
 클릭하신뒤 안에 내용을 지우시고 아래 내용을 복사한 뒤 붙혀넣어주세요.
 
