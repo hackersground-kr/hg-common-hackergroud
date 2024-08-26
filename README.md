@@ -208,8 +208,11 @@ cd Downloads/hg-common-hackergroud
 그리고 하나더 명령어를 실행해줍니다.
 
 ```bash
-azd init -e common-hackergroud
+azd init -e {본인리소스그룹}
 ```
+
+ex) 
+azd init -e common-hackergroud
 
 위 명령어를 실행하고 아래 사진과 같이 나온다면 B 단계로 넘어가시면 됩니다.
 
@@ -455,8 +458,6 @@ Secrets and variables부분을 클릭하시고 actions를 클릭해주세요.
 **체크리스트**
 - [X] Azure container apps로 배포를 했는가?
 - [X] Github Action, Bicep을 통한 배포 자동화를 성공하였는가?
-
-common 1등 하겠습니다.
 
 
 
