@@ -48,7 +48,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          pwd
+          cd server
           docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/server:${{ github.sha }}
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/server:${{ github.sha }}
 
