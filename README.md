@@ -1,4 +1,4 @@
-# `common` - `백수였던 내가 이세계에선 의성 시장?`
+<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/aed2848c-c6ce-4d3a-86f9-a47032f8ff5b"># `common` - `백수였던 내가 이세계에선 의성 시장?`
 
 해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
 
@@ -113,6 +113,16 @@ https://www.docker.com/products/docker-desktop/
 
 그후 Docker Desktop을 실행합니다.
 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
+
+https://app.docker.com/signup?state=hKFo2SByOTUxSXJ6WUJoNnE1VWwyX0x3d3Zjb1o0dmc5ZlRfYaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGF4S3hLUnpMdDJYaFBnTlV6Nm5tOEZ1QXNkcy1vczVQo2NpZNkgbHZlOUdHbDhKdFNVcm5lUTFFVnVDMGxiakhkaTluYjk
+
+회원가입 링크입니다.
+
+<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/3e148c96-d886-4ffb-9fda-16da020c561f">
+
+이메일과 비밀번호를 설정하고 회원가입을 진행해주세요.
+
+이메일과 비밀번호는 외워두고 추후 도커 데스크탑 앱을 실행한 뒤 로그인하시면 됩니다.
 
 ## 시작하기
 
