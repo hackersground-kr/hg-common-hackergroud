@@ -58,9 +58,9 @@ jobs:
 
       - name: Create Container App Environment
         run: az containerapp env create \
-        --name ${{ env.AZURE_ENV_NAME }} \
-        --location ${{ env.AZURE_LOCATION }} \
-        --resource-group rg-${{ env.AZURE_ENV_NAME }}
+          --name ${{ env.AZURE_ENV_NAME }} \
+          --location ${{ env.AZURE_LOCATION }} \
+          --resource-group rg-${{ env.AZURE_ENV_NAME }}
 
       - name: Deploy Server App
         run: az containerapp create \
