@@ -78,6 +78,8 @@ https://www.docker.com/products/docker-desktop/
 이후 만약 아래와 같은 화면이 표시된다면 아래의 가이드를 따라주시고 아니라면, 아래 시작하기 섹션까지 스크롤 해주세요.
 ![image](https://github.com/user-attachments/assets/eb9ef775-f9fa-456c-b1f1-f2acb0b13fde)
 
+Quit 클릭해주세요
+
 왼쪽 하단의 검색 아이콘을 클릭한 후 아래 이미지처럼 cmd를 입력후 관리자 권환으로 실행합니다.
 ![image](https://github.com/user-attachments/assets/505df727-ab7f-4a67-8c91-e202bc6f8149)
 
