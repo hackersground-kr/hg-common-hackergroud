@@ -78,7 +78,7 @@ export default function Scene7Page(
         },
         {
             userType: UserType.KimMinji,
-            message: '(작게 속삭이며) 시장님 뭔가 대책이 있으신가요..?'
+            message: '(작게 속삭이며) 시장님 무슨 대책이 있으신가요..?'
         },
         {
             // TODO : Add Input form

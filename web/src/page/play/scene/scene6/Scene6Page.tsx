@@ -37,7 +37,7 @@ export default function Scene6Page(
         },
         {
             userType: UserType.Hero2,
-            message: '(뭔가 의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까…?)',
+            message: '(의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까…?)',
             disabledKeyDown: true,
             children: (action) => {
                 return <Row $alignItems={'center'} $columnGap={4}>
