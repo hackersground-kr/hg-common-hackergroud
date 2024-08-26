@@ -380,7 +380,7 @@ export default function PlayPage() {
             )}
             {scene === 7 && (
                 <ScenePage
-                    backgroundUrl={'bg8.png'}
+                    backgroundUrl={'image/bg8.png'}
                     chats={[
                         {
                             userType: UserType.Narration,
@@ -523,7 +523,7 @@ export default function PlayPage() {
             )}
             {scene === 12 && (
                 <ScenePage
-                    backgroundUrl={'image/'}
+                    backgroundUrl={'image/bg1.webp'}
                     chats={[
                         {
                             userType: UserType.Narration,
@@ -536,7 +536,7 @@ export default function PlayPage() {
                         // TODO: (플레이어가 답변한 공략 3개 [서버 API호출])
                     ]}
                     onEnded={() => {
-                        nextScene();
+                        alert('스토리가 종료 되었습니다 짝짝짝~');
                     }}
                 />
             )}
