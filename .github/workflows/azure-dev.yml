@@ -24,9 +24,9 @@ jobs:
 
       - name: Inject Secrets into YAML
         run: |
-          sed -i 's/{KEY}/${{ secrets.KEY }}/' server/src/main/resources/application.yml
-          sed -i 's/{ENDPOINT}/${{ secrets.ENDPOINT }}/' server/src/main/resources/application.yml
-
+          sed -i 's#{KEY}#${{ secrets.AZURE_OPENAI_API_KEY }}#' server/src/main/resources/application.yml
+          sed -i 's#{ENDPOINT}#${{ secrets.AZURE_OPENAI_ENDPOINT }}#' server/src/main/resources/application.yml
+       
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
