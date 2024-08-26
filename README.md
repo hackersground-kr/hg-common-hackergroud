@@ -30,14 +30,11 @@
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
-<br>
-인텔리제이, 도커 데스크탑, 도커 엔진, Azure 계정 (Hackerground에 권한이 있는), 깃허브 계정, 자바 jdk-17 , 맥북으로 배포 절차를 구성하였습니다 맥북으로 진행해주세요.
-<br>
 준비사항이 의미가 없군요..
 
 https://www.jetbrains.com/ko-kr/idea/download/
 <br>
-https://docs.docker.com/desktop/install/mac-install/
+https://www.docker.com/products/docker-desktop/
 
 위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
 
@@ -140,6 +137,13 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 ![image](images/11.png)
 
 오른쪽 아래에 네모 안에 |>_| 이렇게 생긴거 클릭해주세요.
+
+윈도우인 경우
+```Powershell
+winget install microsoft.azd
+```
+
+맥북인 경우
 
 ```bash
 curl -fsSL https://aka.ms/install-azd.sh | bash

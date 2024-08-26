@@ -8,7 +8,7 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     axios
-      .get(`${process.env.SERVER_BASE_URL}/test`)
+      .get(`https://host.docker.internal:8080/test`)
       .then((res) => {
         console.log(res.data);
       })
