@@ -67,6 +67,26 @@ https://www.docker.com/products/docker-desktop/
 설치를 기다린 후 CLOSE AND RESTART 버튼을 누릅니다.
 ![image](https://github.com/user-attachments/assets/34d9ec42-a6fa-46ca-9496-0da071f32419)
 
+재부팅 후 표시되는 화면에서 오른쪽 하단의 Accept 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/f95f70bb-49d4-4b1f-806e-6afd8b8aeaeb)
+
+오른쪽 하단의 finish 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/5da54069-bfe7-4026-9e0a-217307452607)
+
+이후 만약 아래와 같은 화면이 표시된다면 아래의 가이드를 따라주시고 아니라면, 아래 시작하기 섹션까지 스크롤 해주세요.
+![image](https://github.com/user-attachments/assets/eb9ef775-f9fa-456c-b1f1-f2acb0b13fde)
+
+왼쪽 하단의 검색 아이콘을 클릭한 후 아래 이미지처럼 cmd를 입력후 관리자 권환으로 실행합니다.
+![image](https://github.com/user-attachments/assets/505df727-ab7f-4a67-8c91-e202bc6f8149)
+
+아래 이미지와 같이 `wsl --update`, `wsl --shutdown`을 차례대로 입력합니다.
+![image](https://github.com/user-attachments/assets/9e492bbd-9440-47a5-b6a4-f5c3a0999018)
+
+그후 다시 왼쪽 검색창에서 docker 를 검색후 실행합니다.
+![image](https://github.com/user-attachments/assets/f0e7d107-d1e7-4cb7-90b1-d619ece40d38)
+
+위의 가이드처럼 다시 FINISH를 누르고 도커를 종료합니다.
+
 
 위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
 
