@@ -1,9 +1,13 @@
 import axios from "axios";
 import config from "@src/config";
+import Response from "@repository/Response";
 
 const usAxios = axios.create({
     baseURL: config.baseUrl,
-})
+    headers: {
+        Accept: "application/json"
+    }
+});
 
 class Repository {
     async ai1(prompt: string): Promise<Response> {
@@ -27,3 +31,7 @@ class Repository {
         return data;
     }
 }
+
+const repository = new Repository();
+
+export default repository;

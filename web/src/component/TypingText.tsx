@@ -1,25 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Dispatch, SetStateAction} from "react";
 
 interface TypingTextProps {
     text: string;
+    value: string;
+    onChange: Dispatch<SetStateAction<string>>;
     speed: number;
     onEnded: () => void;
 }
 
-export default function TypingText(
+function TypingText(
     {
         text,
+        value,
+        onChange,
         speed,
         onEnded
     }: TypingTextProps
 ) {
     const [isEnded, setIsEnded] = useState(false);
-    const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
-        setDisplayText('');
+        onChange('');
         setIsEnded(false);
-    }, [text]);
+    }, [onChange, text]);
 
     useEffect(() => {
         window.onkeydown = (e: any) => {
@@ -27,19 +30,19 @@ export default function TypingText(
                 if (isEnded) {
                     onEnded();
                 } else {
-                    setDisplayText(text);
+                    onChange(text);
                     setIsEnded(true);
                 }
             }
         }
-    }, [isEnded, onEnded, text]);
+    }, [isEnded, onChange, onEnded, text]);
 
     useEffect(() => {
         let currentIndex = 0;
         const intervalId = setInterval(() => {
             const t = text[currentIndex];
             if (t !== undefined && !isEnded) {
-                setDisplayText(prev => prev + t);
+                onChange(prev => prev + t);
                 currentIndex += 1;
             }
             if (currentIndex === text.length) {
@@ -49,7 +52,7 @@ export default function TypingText(
         }, speed);
 
         return () => clearInterval(intervalId);
-    }, [speed, onEnded, text, isEnded]);
+    }, [speed, text, isEnded]);
 
     return (
         <div
@@ -59,7 +62,7 @@ export default function TypingText(
                 gap: 8
             }}
         >
-            <span>{displayText === '' ? '.' : displayText}</span>
+            <span>{value === '' ? '.' : value}</span>
             {isEnded && (
                 <img
                     style={{
@@ -75,3 +78,5 @@ export default function TypingText(
         </div>
     );
 };
+
+export default React.memo(TypingText);
