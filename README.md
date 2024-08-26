@@ -34,6 +34,26 @@
 
 ### WINDOW 설치 가이드 (MAC OS인 경우 하단으로 스크롤 하여 "MAC 설치 가이드"를 따르세요.)=
 
+https://code.visualstudio.com/download
+
+위 링크를 클릭해 사이트에 접속후 아래 이미지와 같이 파일을 다운로드 합니다.
+![image](https://github.com/user-attachments/assets/789f7b0c-fa35-44d1-9731-1339091f0077)
+
+다운로드 된 파일을 실행하고 아래와 같이 약관에 동의후 오른쪽 하단의 "다음" 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/01161438-5c08-488a-9afa-7d3200e08634)
+
+이미지와 같이 오른쪽 하단의 "다음" 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/729babd1-4b81-4744-99d9-5d0188626977)
+
+하단의 이미지와 같이 체크한 후 오른쪽 하단의 "다음" 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/48d44c92-4994-4e76-996b-47a45290a4b0)
+
+오른쪽 하단의 "설치" 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/c444a5d8-575f-4acf-95db-4042ddd0f66f)
+
+설치가 끝난 후 오른쪽 하단의 버튼을 누릅니다.
+
+
 <br>
 https://www.docker.com/products/docker-desktop/
 
