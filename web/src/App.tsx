@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {GlobalStyle} from "@style/globalStyle";
 import AppStateProvider from "@provider/theme/AppStateProvider";
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routes from "@src/routes";
 
 function App() {
