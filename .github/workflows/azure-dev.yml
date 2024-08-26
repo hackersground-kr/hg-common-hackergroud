@@ -56,24 +56,13 @@ jobs:
         run: az extension add --name containerapp --upgrade
 
       - name: Create Container App Environment
-        run: az containerapp env create \
-          --name ${{ vars.AZURE_ENV_NAME }} \
-          --location ${{ vars.AZURE_LOCATION }} \
-          --resource-group rg-${{ vars.AZURE_ENV_NAME }}
+        run: az containerapp env create --name ${{ vars.AZURE_ENV_NAME }} --location ${{ vars.AZURE_LOCATION }} --resource-group rg-${{ vars.AZURE_ENV_NAME }}
 
       - name: Deploy Server App
-        run: az containerapp create \
-          --name server-app \
-          --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/server:${{ github.sha }} \
-          --environment ${{ vars.AZURE_ENV_NAME }} \
-          --resource-group rg-${{ vars.AZURE_ENV_NAME }} \
-          --ingress 'external'
+        run: az containerapp create --name server-app --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/server:${{ github.sha }} --environment ${{ vars.AZURE_ENV_NAME }} --resource-group rg-${{ vars.AZURE_ENV_NAME }} --ingress 'external'
 
       - name: Get FQDN From Server
-        run: export FQDN=$(az containerapp show \
-          --resource-group rg-${{ vars.AZURE_ENV_NAME }} \
-          --name ca-server \
-          --query properties.configuration.ingress.fqdn)
+        run: export FQDN=$(az containerapp show --resource-group rg-${{ vars.AZURE_ENV_NAME }} --name ca-server --query properties.configuration.ingress.fqdn)
 
       # - name: Build and Push Docker Image
       #   run: |
