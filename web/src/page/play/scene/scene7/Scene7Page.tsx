@@ -147,7 +147,7 @@ export default function Scene7Page(
 
     return (
         <ScenePage
-            backgroundUrl={'image/bg7.png'}
+            backgroundUrl={'image/bg7.webp'}
             currentChat={chat}
             onEnded={handle}
         />

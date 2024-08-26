@@ -23,7 +23,7 @@ export default function Scene10Page(
 
     return (
         <ScenePage
-            backgroundUrl={'image/bg5.png'}
+            backgroundUrl={'image/bg5.webp'}
             currentChat={chat}
             onEnded={() => handleKeyDown()}
         />
