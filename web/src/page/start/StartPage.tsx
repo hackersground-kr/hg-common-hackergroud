@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {Background} from "@src/component/Background.style";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {useNavigate} from "react-router-dom";
+import {StartButton} from "@src/component/StartButton.style";
 
 export default function StartPage() {
 
@@ -96,31 +97,26 @@ export default function StartPage() {
                 </div>
             )}
             {startFlow >= 4 && name !== '' && (
-                <div
-                    className={'fade-in-up'}
-                >
-                    <S.StartButton
-                        style={{
-                            bottom: 108,
-                            left: '50%'
-                        }}
-                        onClick={() => {
-                            navigate('play', {
-                                state: {
-                                    name
-                                }
-                            });
-                        }}
-                    >
-                        시작하기
-                        <ExpandRight
-                            style={{
-                                marginTop: -1.5
+                <div className={'fade-in-up'}>
+                    <S.StartButtonContainer>
+                        <StartButton
+                            onClick={() => {
+                                navigate('play', {
+                                    state: {
+                                        name
+                                    }
+                                });
                             }}
-                            fill={'white'}
-                        />
-                        {/*<img style={{marginTop: 8}} src={'icon/RightArrow.png'} width={18}/>*/}
-                    </S.StartButton>
+                        >
+                            시작하기
+                            <ExpandRight
+                                style={{
+                                    marginTop: -1.5
+                                }}
+                                fill={'white'}
+                            />
+                        </StartButton>
+                    </S.StartButtonContainer>
                 </div>
             )}
         </S.Container>

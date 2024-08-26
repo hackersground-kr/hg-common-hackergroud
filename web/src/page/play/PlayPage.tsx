@@ -3,11 +3,11 @@ import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserDictionary, UserType} from "@src/@types/types";
 import {useLocation} from "react-router-dom";
 import {josa} from "es-hangul";
-import DialogTemplate from "@src/component/dialog/DialogTemplate";
+import EndDialog from "@src/component/dialog/enddialog/EndDialog";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(0);
+    const [scene, setScene] = useState(12);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
@@ -19,12 +19,7 @@ export default function PlayPage() {
     return (
         <>
             
-            {isShowEndDialog && 
-                <DialogTemplate dismiss={() => {}}>
-                    <div>
-                        
-                    </div>
-                </DialogTemplate>}
+            {isShowEndDialog && <EndDialog dismiss={() => setIsShowEndDialog(false)}/>}
             {scene === 0 && (
                 <ScenePage
                     backgroundUrl={'image/bg3.png'}
