@@ -58,7 +58,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd server
-          ./gradlew build -x test
+          ./gradlew build
 
       - name: Install azd
         uses: Azure/setup-azd@v1.0.0
