@@ -1,4 +1,6 @@
-# 해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
+# `common` - `백수였던 내가 이세계에선 의성 시장?`
+
+해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
 
 ## 참고 문서
 
@@ -262,7 +264,7 @@ services:
 
 Select an Azure Subscription to use 를 물을껀데 그때 Hackers Ground 리소스 그룹을 선택하세요. 선택후 앤터를 누르시면 됩니다.
 
-Select an Azure location to use 를 물어보면 13. (Asia Pacific) Korea South (koreacentral) 에 초록불이 들어오도록 한 뒤 앤터를 클릭합니다.
+Select an Azure location to use 를 물어보면 13. (Asia Pacific) (koreacentral) 에 초록불이 들어오도록 방향키 위 아래로 움직여 맞춘뒤 앤터를 클릭합니다.
 
 3~4분 기다렸는데 화면이 그대로라면 control + c를 동시에 누른 뒤 다시 azd up를 해주세요
 
