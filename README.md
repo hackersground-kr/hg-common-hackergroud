@@ -32,7 +32,18 @@
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 준비사항이 의미가 없군요..
 
-https://www.jetbrains.com/ko-kr/idea/download/
+https://www.jetbrains.com/ko-kr/idea/download/ 에 접근하여 스크롤을 내려 ![image](https://github.com/user-attachments/assets/014e1396-cc7f-4558-81d3-b8dc4e53a532)
+
+빨간색으로 마킹 된 버튼을 눌러 다운로드 합니다.
+
+다운로드된 파일을 실행하여 다음과 같이 오른쪽 하단의 "다음" 버튼을 게속 누릅니다.
+![image](https://github.com/user-attachments/assets/6939f834-6369-4a23-9d08-4f3ce9782c3b)
+![image](https://github.com/user-attachments/assets/f2d87bfd-95e2-407a-88d3-3b1cf9898504)
+![image](https://github.com/user-attachments/assets/72fe5e44-823b-4b19-8936-b3c166634cd4)
+![image](https://github.com/user-attachments/assets/365a4921-22fb-4978-bd0c-ed7d9f798284)
+![image](https://github.com/user-attachments/assets/52be0539-651d-4179-b481-1f1259b42113)
+다음과 같이 컴퓨터를 재시작합니다.
+
 <br>
 https://www.docker.com/products/docker-desktop/
 
