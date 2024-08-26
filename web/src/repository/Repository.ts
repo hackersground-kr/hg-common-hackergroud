@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "@src/config";
+import Response from "@repository/Response";
 
 const usAxios = axios.create({
     baseURL: config.baseUrl,
@@ -27,3 +28,7 @@ class Repository {
         return data;
     }
 }
+
+const repository = new Repository();
+
+export default repository;

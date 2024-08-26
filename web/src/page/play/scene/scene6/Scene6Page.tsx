@@ -1,7 +1,11 @@
 import {SharedSceneProps} from "@src/page/play/scene/SharedSceneProps";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
-import React from "react";
+import React, {useRef} from "react";
+import {Row} from "@designsystem/util/StyledFlex";
+import * as S from './Scene6Page.style';
+import {Button} from "@src/component/Button.style";
+import Repository from "@src/repository/Repository";
 
 export default function Scene6Page(
     {
@@ -9,8 +13,25 @@ export default function Scene6Page(
         onEnded
     }: SharedSceneProps
 ) {
-    return (
 
+    const inputRef = useRef<HTMLInputElement>(null);
+    const input = inputRef.current;
+    const submit = async () => {
+
+        if (!input?.value) {
+            alert('내용을 입력해 주세요');
+            return;
+        }
+
+        try {
+            const response = await Repository.ai1(input.value);
+
+        } catch (e) {
+
+        }
+    }
+
+    return (
         <ScenePage
             backgroundUrl={'image/bg6.webp'}
             chats={[
@@ -39,7 +60,10 @@ export default function Scene6Page(
                     //     onChange: e => setAi1Prompt(e.target.value),
                     // }
                     children: (
-                        <input type="text"/>
+                        <Row $alignItems={'center'} $columnGap={4}>
+                            <S.Input ref={inputRef} type="text" onKeyDown={event => event.stopPropagation()}/>
+                            <Button onClick={submit}>완료</Button>
+                        </Row>
                     )
                 },
                 {
