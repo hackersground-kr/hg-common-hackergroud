@@ -6,8 +6,10 @@ import org.springframework.ai.azure.openai.AzureOpenAiImageOptions
 import org.springframework.ai.image.ImagePrompt
 import org.springframework.ai.image.ImageResponse
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.CrossOrigin
 
 @Service
+@CrossOrigin(origins = ["*"])
 class AiService(
     private val chatModel: AzureOpenAiChatModel,
     private val openaiImageOpenAiChatModel: AzureOpenAiImageModel
