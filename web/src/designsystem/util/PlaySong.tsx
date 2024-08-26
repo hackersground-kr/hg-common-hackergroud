@@ -15,7 +15,9 @@ class PlaySong extends React.Component<PlaySongProps> {
     audioElement.play().catch((error) => {
       console.log("error:", error);
       document.addEventListener('click', () => {
-        audioElement.play();
+        audioElement.play().catch((error) => {
+          console.log("error:", error);
+        });
       }, { once: true });
     });
   }

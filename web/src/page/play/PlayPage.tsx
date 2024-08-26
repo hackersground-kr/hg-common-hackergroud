@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserDictionary, UserType} from "@src/@types/types";
 import {useLocation} from "react-router-dom";
+import {josa} from "es-hangul";
 
 export default function PlayPage() {
 
@@ -26,7 +27,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '평소보다 더 잘 일어난 박병춘. 회사를 가기위해 가볍게 샤워를 하고 나온다.'
+                            message: `평소보다 더 잘 일어난 ${josa(name, '은/는')} 회사를 가기위해 가볍게 샤워를 하고 나온다.`
                         },
                         {
                             userType: UserType.Narration,
@@ -50,7 +51,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: `${name}은 급하게 준비를 마치고 회사로 달려간다.`
+                            message: `${josa(name, '은/는')} 급하게 준비를 마치고 회사로 달려간다.`
                         }
                     ]}
                     onEnded={() => {
@@ -116,7 +117,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '그래서 취준생으로 1년이란 시간이 흐르고… 개발감을 잊지 않기 위해 해커톤이라도 나가자 생각한 박병춘'
+                            message: `그래서 취준생으로 1년이란 시간이 흐르고… 개발감을 잊지 않기 위해 해커톤이라도 나가자 생각한 ${name}`
                         },
                         {
                             userType: UserType.Narration,
@@ -128,7 +129,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '낙심한채 박병춘은 잠에 들게 된다…'
+                            message: `낙심한채 ${josa(name, '은/는')} 잠에 들게 된다…`
                         }
                     ]}
                     onEnded={() => {
