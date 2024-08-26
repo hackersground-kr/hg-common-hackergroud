@@ -1,6 +1,4 @@
-<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/aed2848c-c6ce-4d3a-86f9-a47032f8ff5b"># `common` - `백수였던 내가 이세계에선 의성 시장?`
-
-해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
+# 해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
 
 ## 참고 문서
 
@@ -88,7 +86,18 @@ Quit 클릭해주세요
 
 
 
-위의 가이드처럼 다시 FINISH를 누르고 회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
+위의 가이드처럼 다시 FINISH를 누르고 회원가입을 하라면 회원가입
+
+
+https://app.docker.com/signup?state=hKFo2SByOTUxSXJ6WUJoNnE1VWwyX0x3d3Zjb1o0dmc5ZlRfYaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGF4S3hLUnpMdDJYaFBnTlV6Nm5tOEZ1QXNkcy1vczVQo2NpZNkgbHZlOUdHbDhKdFNVcm5lUTFFVnVDMGxiakhkaTluYjk
+
+회원가입 링크입니다.
+
+<img width="1512" alt="스크린샷 2024-08-27 오전 12 06 46" src="https://github.com/user-attachments/assets/aed2848c-c6ce-4d3a-86f9-a47032f8ff5b">
+
+이메일, 비번을 설정하고 로그인을 추후 하시면 됩니다.
+
+도커 앱을 킬때 로그인 하라면 로그인 하고 사용하세요.<br>
 
 ### MAC 설치 가이드
 
@@ -143,7 +152,11 @@ Start 부근 Open...을 클릭해주세요.
 
 아까 다운받아 압축을 해제한 파일을 클릭 후 열기를 눌러주세요.
 
-마우스를 위로 끝까지 올려줍니다.
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Feditor%2Fworkspace-trust&psig=AOvVaw1AmeQfJxiSDgwHb3P1EE8b&ust=1724771918774000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKj-4Z76kogDFQAAAAAdAAAAABAE![image](https://github.com/user-attachments/assets/1206d48d-227e-4e19-af8d-09f907387cbc)
+
+이런 경고가 뜬다면 Yes, I trust the authors 를 클릭해주세요.
+
+그 뒤 마우스를 위로 끝까지 올려줍니다.
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/b1440027-dccd-491f-a598-b525a96c0f08">
 
