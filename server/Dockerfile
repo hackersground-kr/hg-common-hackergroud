@@ -1,5 +1,5 @@
-FROM openjdk:latest
+FROM ubuntu:latest
 
-COPY ./build/libs/server-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY server-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
