@@ -29,23 +29,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create application.yml
+      - name: Update application.yml with secrets
         run: |
-          mkdir -p ./src/main/resources
-          cat <<EOF > ./src/main/resources/application.yml
-          spring:
-            ai:
-              azure:
-                openai:
-                  api-key: ${ { secrets.OPENAI_API_KEY } }
-                  endpoint: ${ { secrets.OPENAI_ENDPOINT } }
-                  chat:
-                    options:
-                      deployment-name: gpt-4o
-                  image:
-                    options:
-                      deployment-name: dall-e-3
-          EOF
+          sed -i '' 's/{ secret.KEY }/${{ secrets.KEY }}/' ./src/main/resources/application.yml
+          sed -i '' 's/{ secret.ENDPOINT }/${{ secrets.ENDPOINT }}/' ./src/main/resources/application.yml
 
 
       - uses: actions/checkout@v3
