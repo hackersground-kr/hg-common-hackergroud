@@ -1,35 +1,35 @@
 import axios from "axios";
-import config from "@src/config";
 import Response from "@repository/Response";
+import config from "@src/config";
 
 const usAxios = axios.create({
-    baseURL: config.baseUrl,
-    headers: {
-        Accept: "application/json"
-    }
+  baseURL: config.baseUrl,
+  headers: {
+    Accept: "application/json",
+  },
 });
 
 class Repository {
-    async ai1(prompt: string): Promise<Response> {
-        const {data} = await usAxios.post('ai/1', {
-            text: prompt
-        });
-        return data;
-    }
+  async ai1(prompt: string): Promise<Response> {
+    const { data } = await usAxios.post("ai/1", {
+      text: prompt,
+    });
+    return data;
+  }
 
-    async ai2(prompt: string): Promise<Response> {
-        const {data} = await usAxios.post('ai/2', {
-            text: prompt
-        });
-        return data;
-    }
+  async ai2(prompt: string): Promise<Response> {
+    const { data } = await usAxios.post("ai/2", {
+      text: prompt,
+    });
+    return data;
+  }
 
-    async ai3(prompt: string): Promise<Response> {
-        const {data} = await usAxios.post('ai/3', {
-            text: prompt
-        });
-        return data;
-    }
+  async ai3(prompt: string): Promise<Response> {
+    const { data } = await usAxios.post("ai/3", {
+      text: prompt,
+    });
+    return data;
+  }
 }
 
 const repository = new Repository();

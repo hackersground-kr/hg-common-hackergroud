@@ -100,7 +100,7 @@ export default function Scene8Page(
 
     return (
         <ScenePage
-            backgroundUrl={'image/bg8.png'}
+            backgroundUrl={'image/bg8.webp'}
             currentChat={chat}
             onEnded={handle}
         />
