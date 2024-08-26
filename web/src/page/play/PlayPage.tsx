@@ -33,7 +33,7 @@ export default function PlayPage() {
     return (
         <>
             
-            {isShowEndDialog && <EndDialog dismiss={() => setIsShowEndDialog(false)}/>}
+            {isShowEndDialog && <EndDialog dismiss={(_) => setIsShowEndDialog(false)}/>}
             {scene === 0 && (
                 <ScenePage
                     backgroundUrl={'image/bg3.png'}

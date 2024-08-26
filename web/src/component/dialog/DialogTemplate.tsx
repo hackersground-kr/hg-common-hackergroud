@@ -5,7 +5,7 @@ import FlexLayout from "@designsystem/util/FlexLayout";
 
 interface DialogTemplateProps {
     children: React.ReactNode;
-    dismiss: () => void;
+    dismiss: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const DialogTemplate = (
@@ -24,9 +24,9 @@ const DialogTemplate = (
     return (
         <S.DialogContainer ref={dialogRef}>
             {children}
-            <S.Backdrop onClick={() => {
+            <S.Backdrop onClick={(e) => {
                 dialogRef.current?.close();
-                dismiss();
+                dismiss(e);
             }}/>
         </S.DialogContainer>
     );

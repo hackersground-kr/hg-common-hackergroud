@@ -1,7 +1,7 @@
 import * as S from './ScenePage.style';
 import {Background} from "@src/component/Background.style";
 import {Chats, UserDictionary} from "@src/@types/types";
-import {useState} from "react";
+import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
 import TypingText from "@src/component/TypingText";
 import PlaySong from '@src/designsystem/util/PlaySong';

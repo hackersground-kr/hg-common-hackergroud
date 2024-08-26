@@ -4,9 +4,10 @@ import {Column, Row} from "@designsystem/util/StyledFlex";
 import Spacer from "@src/component/spacer/Spacer";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {StartButton} from "@src/component/StartButton.style";
+import React, {useEffect, useState} from "react";
 
 interface EndDialogProps {
-    dismiss: () => void;
+    dismiss: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export default function EndDialog(
@@ -14,6 +15,15 @@ export default function EndDialog(
         dismiss
     }: EndDialogProps
 ) {
+
+    const [wow, setWow] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setWow(true);
+        }, 300);
+    }, []);
+
     return (
         <DialogTemplate dismiss={dismiss}>
             <S.Container>
@@ -23,7 +33,12 @@ export default function EndDialog(
                         <S.Promotion>게임을 개선하기 위해 설문을 받고 있습니다.</S.Promotion>
                     </Column>
                     <Spacer/>
-                    <StartButton>
+                    <StartButton
+                        onClick={() => {
+                            if (!wow) return;
+                            window.open('https://forms.gle/SMSCFjSKxwUYnr9v6\n');
+                        }}
+                    >
                         시작하기
                         <ExpandRight fill={'white'}/>
                     </StartButton>

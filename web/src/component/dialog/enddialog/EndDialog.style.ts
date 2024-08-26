@@ -8,11 +8,15 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 3;
+    overflow: hidden;
 `;
 
 export const Content = styled.div`
     display: flex;
     width: 70vw;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
 `;
 
 export const End = styled.h1`
