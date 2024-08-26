@@ -1,4 +1,4 @@
-# `common` - `백수였던 내가 이세계에선 의성 시장?`
+![image](https://github.com/user-attachments/assets/4a694753-0ea1-4745-bc5b-40e02ffc2d37)# `common` - `백수였던 내가 이세계에선 의성 시장?`
 
 해커그라운드 해커톤에 참여하는 `common` 팀의 `백수였던 내가 이세계에선 의성 시장?`입니다.
 
@@ -32,30 +32,7 @@
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 준비사항이 의미가 없군요..
 
-### WINDOW 설치 가이드 (MAC OS인 경우 하단으로 스크롤 하여 "MAC 설치 가이드"를 따르세요.)
-
-https://www.jetbrains.com/ko-kr/idea/download/ 에 접근하여 스크롤을 내려 ![image](https://github.com/user-attachments/assets/014e1396-cc7f-4558-81d3-b8dc4e53a532)
-
-빨간색으로 마킹 된 버튼을 눌러 다운로드 합니다.
-
-다운로드된 파일을 실행하여 다음과 같이 오른쪽 하단의 "다음" 버튼을 게속 누릅니다.
-![image](https://github.com/user-attachments/assets/6939f834-6369-4a23-9d08-4f3ce9782c3b)
-![image](https://github.com/user-attachments/assets/f2d87bfd-95e2-407a-88d3-3b1cf9898504)
-![image](https://github.com/user-attachments/assets/72fe5e44-823b-4b19-8936-b3c166634cd4)
-![image](https://github.com/user-attachments/assets/365a4921-22fb-4978-bd0c-ed7d9f798284)
-![image](https://github.com/user-attachments/assets/52be0539-651d-4179-b481-1f1259b42113)
-다음과 같이 컴퓨터를 재시작합니다.
-
-윈도우 검색창에 intellj 를 검색하여 IDE를 실행합니다.
-![image](https://github.com/user-attachments/assets/2a1155ac-ecce-4bfc-b332-337461ce8bee)
-
-약관에 동의후 오른쪽 하단의 계속 버튼을 누릅니다.
-![image](https://github.com/user-attachments/assets/937130d3-46a0-4b7a-a356-d691cfd64415)
-
-오른쪽 하단의 "보내지 않음" 버튼을 누릅니다.
-![image](https://github.com/user-attachments/assets/836dad90-e35a-484d-b0d9-1fa225cc7585)
-
-이후 인텔리제이 프로그램을 종료합니다.
+### WINDOW 설치 가이드 (MAC OS인 경우 하단으로 스크롤 하여 "MAC 설치 가이드"를 따르세요.)=
 
 <br>
 https://www.docker.com/products/docker-desktop/
@@ -95,45 +72,17 @@ Quit 클릭해주세요
 
 ### MAC 설치 가이드
 
-https://www.jetbrains.com/ko-kr/idea/download/
+https://code.visualstudio.com/download
+위 링크에 접속해 아래 이미지와 같이 Visual Studio Code를 설치합니다.
+<img width="1083" alt="스크린샷 2024-08-26 오후 11 08 21" src="https://github.com/user-attachments/assets/0747a776-e0fc-4249-8ebc-7206ea85927a">
 
-![image](https://github.com/user-attachments/assets/42717722-8c29-411e-afc2-75d4ee181c52)
+잠시 기다린 후 다운로드된 파일을 열어 압축을 풀고, 아래 이미지와 같이 Visual Studio Code.app 을 Finder 좌측의 "응용 프로그램" 폴더로 이동시킵니다.
+![image](https://github.com/user-attachments/assets/603bf353-520e-4adb-a4ac-d6df24ff2431)
 
-첨부한 링크를 들어가서 다운로드쪽 파란걸 확인해주세요
-
-<br><br>
-
-만약이 쿠키 관련 창이 뜨면 창 닫기 해주세요.
-
-<br>
-
-<br>
-
-본인 컴퓨터에 맞게 깔아주시면 좋을 것 같습니다.
-
-<br><br>
-
-본인 컴퓨터가 Intel인지 Apple Silicon인지 모른다?
-
-<br><br>
-
-저거 선택하면 바로 다운로드 시작됩니다.
-
-![image](https://github.com/user-attachments/assets/8f25dc7f-545a-43b3-880d-d36994e4e3f3)
+그 후 "응용 프로그램" 폴더로 이동한 후 Visual Studio Code.app을 실행합니다.
 
 
-다운 다받으셨으면 더블클릭으로 열어주시고요
-
-![image](https://github.com/user-attachments/assets/0503a881-a8c6-440d-8acc-02950819b768)
-
-마우스를 꾹 눌러 Application으로 이동시켜주세요.
-
-<br>
-
-그러면 인텔리제이 Mac 설치가 완료됩니다.
-
-회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
-<br>
+https://www.docker.com/products/docker-desktop/
 
 아래 이미지에서 오른쪽 Download for Mac - [Apple Silicon 또는 Intel Chip을 자신의 노트북에 맞게 설치합니다.] 을 누릅니다.
 <img width="922" alt="스크린샷 2024-08-26 오후 6 41 07" src="https://github.com/user-attachments/assets/50f07285-8fa4-4511-b1f9-3b71aeef6590">
@@ -226,7 +175,7 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 아무거�
 
 오른쪽 아래에 네모 안에 |>_| 이렇게 생긴거 클릭해주세요.
 
-윈도우인 경우
+윈도우인 경우 
 ```Powershell
 winget install microsoft.azd
 ```
