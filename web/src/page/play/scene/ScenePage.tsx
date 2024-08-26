@@ -44,9 +44,9 @@ export default function ScenePage(
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        animation: chat.vibration?'vibrate .1s linear 10':'none',
+                        animation: chat.vibration ? 'vibrate .1s linear 10' : undefined,
                     }}
-                    className={chat.vibration? '': 'fade-in-up'}
+                    className={chat.vibration ? '' : 'fade-in-up'}
                 >
                     <img
                         style={{
@@ -64,7 +64,7 @@ export default function ScenePage(
                                 text={chat.message}
                                 speed={50}
                                 onEnded={handleKeyDown}
-                                />
+                            />
                         )}
                         {typeof chat.message === "object" && (
                             <SelectText
