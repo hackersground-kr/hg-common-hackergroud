@@ -51,11 +51,9 @@ jobs:
       - name: Log in to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ AZURE_CREDENTIALS.clientId }}
-          tenant-id: ${{ AZURE_CREDENTIALS.tenantId }}
-          subscription-id: ${{ AZURE_CREDENTIALS.subscriptionId }}
-        env:
-          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ AZURE_CLIENT_ID }}
+          tenant-id: ${{ AZURE_TENANT_ID }}
+          subscription-id: ${{ AZURE_SUBSCRIPTION_ID }}
 
       - name: Log in to Docker Registry
         uses: azure/docker-login@v1
