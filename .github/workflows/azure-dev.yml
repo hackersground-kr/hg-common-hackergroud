@@ -24,21 +24,8 @@ jobs:
 
       - name: Inject Secrets into YAML
         run: |
-          echo "spring:
-  ai:
-    azure:
-      openai:
-        api-key: ${KEY}
-        endpoint: ${ENDPOINT}
-        chat:
-          options:
-            deployment-name: gpt-4o
-        image:
-          options:
-            deployment-name: dall-e-3" > server/src/main/resources/application.yml
-        env:
-          AZURE_OPENAI_API_KEY: ${{ secrets.KET }}
-          AZURE_OPENAI_ENDPOINT: ${{ secrets.ENDPOINT }}
+          sed -i 's/{KEY}/${{ secrets.KEY }}/' server/src/main/resources/application.yml
+          sed -i 's/{ENDPOINT}/${{ secrets.ENDPOINT }}/' server/src/main/resources/application.yml
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
