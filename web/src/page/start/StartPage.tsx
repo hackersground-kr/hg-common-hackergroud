@@ -28,7 +28,7 @@ export default function StartPage() {
 
     return (
         <S.Container>
-            <Background url={'image/bg2.png'}/>
+            <Background url={'image/bg2.webp'}/>
             <S.TitleContainer>
                 <div
                     style={{
