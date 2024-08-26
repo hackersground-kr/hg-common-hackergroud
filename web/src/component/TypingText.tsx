@@ -22,7 +22,7 @@ function TypingText(
     useEffect(() => {
         onChange('');
         setIsEnded(false);
-    }, [text]);
+    }, [onChange, text]);
 
     useEffect(() => {
         window.onkeydown = (e: any) => {
@@ -35,7 +35,7 @@ function TypingText(
                 }
             }
         }
-    }, [isEnded, onEnded, text]);
+    }, [isEnded, onChange, onEnded, text]);
 
     useEffect(() => {
         let currentIndex = 0;
@@ -52,7 +52,7 @@ function TypingText(
         }, speed);
 
         return () => clearInterval(intervalId);
-    }, [speed, onEnded, text, isEnded]);
+    }, [speed, text, isEnded]);
 
     return (
         <div
