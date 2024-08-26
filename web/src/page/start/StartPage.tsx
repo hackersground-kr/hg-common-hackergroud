@@ -1,8 +1,7 @@
 import * as S from './StartPage.style';
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Background} from "@src/component/Background.style";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
-import {AppStateContext} from "@provider/theme/AppStateContext";
 import {useNavigate} from "react-router-dom";
 
 export default function StartPage() {
