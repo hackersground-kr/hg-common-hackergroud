@@ -69,6 +69,7 @@ export default function TypingText(
                     width={7}
                     height={10}
                     className={'blinking-text'}
+                    alt={'chat indicator'}
                 />
             )}
         </div>

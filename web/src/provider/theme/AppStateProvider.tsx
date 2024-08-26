@@ -1,10 +1,4 @@
 import {ReactNode, useState} from "react";
-import {ThemeProvider} from "styled-components";
-
-import useDarkTheme from "@hook/global/useDarkTheme";
-
-import {USDarkScheme, USLightScheme} from "@designsystem/foundation/color/USColorSementic";
-import {DarkThemeContext} from "@provider/theme/DarkThemeContext";
 import {AppStateContext} from "@provider/theme/AppStateContext";
 
 interface AppStateProps {
