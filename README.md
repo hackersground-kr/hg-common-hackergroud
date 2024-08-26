@@ -173,11 +173,16 @@ azd auth login --check-status
 로그인이 끝났다면 로그인이 재대로 되었는지 명령어를 쳐 확인해주세요.
 로그인이 안됬다면 될때까지 저 과정을 무한반복하세요 그만두지 말고 무한반복하세요.
 
-로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다.
+로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다. (이미 최상위 폴더이면 사용하지 않아도 됩니다 yeseong0412@MacBook-Pro-YS  ~/Downloads/hg-common-hackergroud-main  )
 
 ```bash
 cd
 cd Downloads/hg-common-hackergroud
+```
+
+그리고 하나더 명령어를 실행해줍니다.
+
+```bash
 azd init -e common-hackergroud
 ```
 
