@@ -1,12 +1,1 @@
-spring:
-  ai:
-    azure:
-      openai:
-        api-key: { secret.KEY }
-        endpoint: { secret.ENDPOINT }
-        chat:
-          options:
-            deployment-name: gpt-4o
-        image:
-          options:
-            deployment-name: dall-e-3
+
