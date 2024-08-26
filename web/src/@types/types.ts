@@ -5,11 +5,6 @@ interface SelectProps {
     onSelect: (item: string) => void;
 }
 
-// interface InputProps {
-//     value: string;
-//     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-// }
-
 export interface Chats {
     userType: UserType;
     message: string;
@@ -17,7 +12,7 @@ export interface Chats {
     vibration?: boolean;
     isLoading?: boolean;
     select?: SelectProps;
-    // input?: InputProps;
+    disabledKeyDown?: boolean;
     children?: (action: () => void) => React.ReactNode;
 }
 

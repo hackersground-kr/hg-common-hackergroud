@@ -17,7 +17,7 @@ export default function Scene6Page(
 ) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response | null>(null);
-    const {chat, handleKeyDown} = useScene([
+    const {selectedIdx, chat, handleKeyDown} = useScene([
         {
             userType: UserType.KimMinji,
             message: '시장님 마을 이장 김춘배씨 입니다.'
@@ -38,14 +38,14 @@ export default function Scene6Page(
         {
             userType: UserType.Hero2,
             message: '(뭔가 의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까…?)',
-            // input: {
-            //     value: ai1Prompt,
-            //     onChange: e => setAi1Prompt(e.target.value),
-            // }
+            disabledKeyDown: true,
             children: (action) => {
                 return <Row $alignItems={'center'} $columnGap={4}>
-                    <S.Input value={input} onChange={e => setInput(e.target.value)} type="text"
-                             onKeyDown={event => event.stopPropagation()}/>
+                    <S.Input
+                        value={input} onChange={e => setInput(e.target.value)}
+                        type="text"
+                        onKeyDown={event => event.stopPropagation()}
+                    />
                     <Button onClick={async () => {
                         if (!input) {
                             alert('내용을 입력해 주세요');

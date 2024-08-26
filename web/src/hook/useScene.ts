@@ -9,6 +9,9 @@ const useScene = (chats: Chats[], onEnded: () => void) => {
     const chat = chats[selectedIdx];
 
     const handleKeyDown = useCallback(() => {
+        if (chat.disabledKeyDown) {
+            return;
+        }
 
         if (selectedIdx + 1 >= chats.length) {
             onEnded();
@@ -16,9 +19,11 @@ const useScene = (chats: Chats[], onEnded: () => void) => {
         }
 
         setSelectedIdx(i => i + 1);
-    }, [chats.length, onEnded, selectedIdx]);
+    }, [chat.disabledKeyDown, chats.length, onEnded, selectedIdx]);
 
     return {
+        selectedIdx,
+        setSelectedIdx,
         chat,
         handleKeyDown,
     };
