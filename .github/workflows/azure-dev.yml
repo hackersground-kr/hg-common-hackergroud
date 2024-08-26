@@ -31,7 +31,7 @@ jobs:
 
       - name: Inject Secrets into YAML
         run: |
-          - run: echo "${{ secrets.APPLICATION }}" > .server/src/main/resources/application.yml
+          - run: echo "${{ secrets.APPLICATION }}" > server/src/main/resources/application.yml
           cat server/src/main/resources/application.yml
 
 
