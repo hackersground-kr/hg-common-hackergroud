@@ -20,17 +20,21 @@ export default function SelectText(
             onEnded(texts[selectIndex]);
         }
         if (e.key === 'ArrowUp') {
-            if (selectIndex <= 0) { return }
-            setSelectIndex(selectIndex-1)
+            if (selectIndex <= 0) {
+                return
+            }
+            setSelectIndex(selectIndex - 1)
         }
         if (e.key === 'ArrowDown') {
-            if (selectIndex >= texts.length-1) { return }
-            setSelectIndex(selectIndex+1)
+            if (selectIndex >= texts.length - 1) {
+                return
+            }
+            setSelectIndex(selectIndex + 1)
         }
     }
 
     useEffect(() => {
-        setSelectIndex(0)
+        setSelectIndex(0);
     }, [texts])
 
     return (
@@ -44,12 +48,13 @@ export default function SelectText(
         >
             {texts.map((text, idx) => (
                 <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "row",
-                    gap: 8,
-                }}
+                    key={idx}
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "row",
+                        gap: 8,
+                    }}
                 >
                     <span
                         style={{

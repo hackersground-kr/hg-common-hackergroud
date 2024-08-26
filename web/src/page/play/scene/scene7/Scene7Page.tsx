@@ -111,7 +111,7 @@ export default function Scene7Page(
         },
         {
             userType: UserType.Hero2,
-            message: `'${selectedReason}' 문제를 해결할 수 있는 해결책을 제안하세요`,
+            message: `'${selectedReason?.substring(3)}' 문제를 해결할 수 있는 해결책을 제안하세요`,
             disabledKeyDown: true,
             children: () => {
                 return (
@@ -133,6 +133,7 @@ export default function Scene7Page(
     ], onEnded);
 
     const handle = () => {
+        console.log(result);
         if (!result) {
             handleKeyDown();
             return;
