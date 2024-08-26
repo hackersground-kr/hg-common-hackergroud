@@ -93,12 +93,12 @@ module appsEnv './shared/apps-env.bicep' = {
 }
 
 module web './app/web.bicep' = {
-  name: 'web'
+  name: 'web-app'
   params: {
-    name: 'web'
+    name: 'web-app'
     location: location
     tags: tags
-    identityName: 'web'
+    identityName: 'web-app'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: appsEnv.outputs.name
     containerRegistryName: registry.outputs.name
@@ -112,19 +112,19 @@ module web './app/web.bicep' = {
 }
 
 module server './app/server.bicep' = {
-  name: 'server'
+  name: 'server-app'
   params: {
-    name: 'server'
+    name: 'server-app'
     location: location
     tags: tags
-    identityName: 'server'
+    identityName: 'server-app'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: appsEnv.outputs.name
     containerRegistryName: registry.outputs.name
     exists: serverExists
     appDefinition: serverDefinition
     allowedOrigins: [
-      'https://web.${appsEnv.outputs.domain}'
+      'https://web-app.${appsEnv.outputs.domain}'
     ]
   }
   scope: rg
