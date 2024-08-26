@@ -10,7 +10,7 @@ export default function Scene5Page(
         onEnded
     }: SharedSceneProps
 ) {
-    const {chat, handleKeyDown} = useScene([
+    const {chat, handleKeyDown, handleKeyDownCount} = useScene([
         {
             userType: UserType.Hero,
             message: '흑… 머리가 왜 이렇게 아프지….?'
@@ -80,7 +80,15 @@ export default function Scene5Page(
         },
         {
             userType: UserType.Hero2,
-            message: '의성시장..? (내가 의성시장이 된거야?)'
+            message: '',
+            select: {
+                data: ["오늘 일정이 어떻게 되지?", "의성시장..?"],
+                onSelect: (item: string) => {
+                    if (item === "오늘 일정이 어떻게 되지?") {
+                        handleKeyDownCount(2);
+                    }
+                }
+            }
         },
         {
             userType: UserType.KimMinji,
