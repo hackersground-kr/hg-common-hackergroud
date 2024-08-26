@@ -5,6 +5,7 @@ import Spacer from "@src/component/spacer/Spacer";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {StartButton} from "@src/component/StartButton.style";
 import React, {useEffect, useState} from "react";
+import PlaySong from '@src/designsystem/util/PlaySong';
 
 interface EndDialogProps {
     dismiss: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -26,6 +27,7 @@ export default function EndDialog(
 
     return (
         <DialogTemplate dismiss={dismiss}>
+            <PlaySong path='/music/end.mp3'/>
             <S.Container>
                 <S.Content>
                     <Column $gap={4}>

@@ -17,7 +17,7 @@ import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(5);
+    const [scene, setScene] = useState(12);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
