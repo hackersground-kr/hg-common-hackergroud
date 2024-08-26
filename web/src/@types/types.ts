@@ -1,8 +1,9 @@
 export interface Chats {
     userType: UserType;
-    message: string;
+    message: string | string[];
     music?: string;
     vibration?: boolean;
+    callback?: (text: string) => void;
 }
 
 export enum UserType {
@@ -10,6 +11,9 @@ export enum UserType {
     Narration,
     KangSeongMin,
     KimMinji,
+    KimChunBae,
+    HongGilDong,
+    ParkJinSoo,
     Unknown
 }
 
@@ -33,6 +37,18 @@ export const UserDictionary: {
     [UserType.KimMinji]: {
         name: '김민지',
         image: 'image/char1.png',
+    },
+    [UserType.KimChunBae]: {
+        name: '김춘배 이장',
+        image: 'image/char2.png',
+    },
+    [UserType.HongGilDong]: {
+        name: '홍길동',
+        image: 'image/char2.png',
+    },
+    [UserType.ParkJinSoo]: {
+        name: '박진수',
+        image: 'image/char5.png',
     },
     [UserType.Unknown]: {
         name: '??',

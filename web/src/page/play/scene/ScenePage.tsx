@@ -5,6 +5,7 @@ import {useState} from "react";
 import {useLocation} from "react-router-dom";
 import TypingText from "@src/component/TypingText";
 import PlaySong from '@src/designsystem/util/PlaySong';
+import SelectText from '@src/component/SelectText';
 
 interface ScenePageProps {
     backgroundUrl: string;
@@ -58,11 +59,21 @@ export default function ScenePage(
                         <S.Name>
                             {user.name ?? name}
                         </S.Name>
-                        <TypingText
-                            text={chat.message}
-                            speed={50}
-                            onEnded={handleKeyDown}
-                        />
+                        {typeof chat.message === "string" && (
+                            <TypingText
+                                text={chat.message}
+                                speed={50}
+                                onEnded={handleKeyDown}
+                                />
+                        )}
+                        {typeof chat.message === "object" && (
+                            <SelectText
+                                texts={chat.message}
+                                onEnded={(text: string) => {
+                                    chat?.callback && chat.callback(text)
+                                }}
+                            />
+                        )}
                     </S.Chat>
                 </div>
             </S.Content>

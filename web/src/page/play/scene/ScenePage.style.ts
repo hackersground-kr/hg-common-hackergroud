@@ -24,7 +24,7 @@ export const Name = styled.h1`
     position: absolute;
     left: 0;
     top: 0;
-    padding: 12px 8px;
+    padding: 12px 16px;
     margin-left: 24px;
     margin-top: -20px;
     
@@ -49,4 +49,5 @@ export const Chat = styled.div`
     border-radius: 15px;
     font-weight: 300;
     font-size: 22px;
+    line-height: 32px;
 `;

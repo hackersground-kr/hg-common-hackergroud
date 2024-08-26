@@ -1,9 +1,6 @@
-import React, { useContext, useEffect } from "react";
-import Preview from "@designsystem/preview/Preview";
+import React, { useEffect } from "react";
 import USColorProvider from "@provider/theme/USColorProvider";
 import { GlobalStyle } from "@style/globalStyle";
-import StartPage from "@src/page/start/StartPage";
-import ScenePage from "@src/page/play/scene/ScenePage";
 import AppStateProvider from "@provider/theme/AppStateProvider";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "@src/routes";
@@ -11,9 +8,14 @@ import axios from "axios";
 
 function App() {
   useEffect(() => {
-    axios.get("http://localhost:8080/test").then((res) => {
-      console.log(res.data);
-    });
+    (async () => {
+      try {
+        const data = await axios.get("http://localhost:8080/test");
+        console.log(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    })()
   }, []);
 
   return (
