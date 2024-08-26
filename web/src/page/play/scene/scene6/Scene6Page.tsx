@@ -6,8 +6,8 @@ import {Row} from "@designsystem/util/StyledFlex";
 import * as S from './Scene6Page.style';
 import {Button} from "@src/component/Button.style";
 import Repository from "@src/repository/Repository";
-import Response from "@repository/Response";
 import useScene from "@hook/useScene";
+import Response from "@repository/Response";
 
 export default function Scene6Page(
     {
@@ -16,8 +16,8 @@ export default function Scene6Page(
     }: SharedSceneProps
 ) {
     const [input, setInput] = useState('');
-    const [result, setResult] = useState<Response | null>(null);
-    const {selectedIdx, chat, handleKeyDown} = useScene([
+    const [result, setResult] = useState<Response>();
+    const {setSelectedIdx, chat, handleKeyDown} = useScene([
         {
             userType: UserType.KimMinji,
             message: '시장님 마을 이장 김춘배씨 입니다.'
@@ -55,9 +55,10 @@ export default function Scene6Page(
                         try {
                             const response = await Repository.ai1(input);
                             action();
+                            setSelectedIdx(prev => prev + 1);
                             setResult(response);
                         } catch (e) {
-
+                            alert('에러가 발생했습니다. ㅠㅠ 🥲');
                         }
                     }}>완료</Button>
                 </Row>
@@ -73,11 +74,23 @@ export default function Scene6Page(
         }
     ], onEnded);
 
+    const handle = () => {
+        if (!result) {
+            handleKeyDown();
+            return;
+        }
+        if (result?.state) {
+            handleKeyDown();
+        } else {
+            setSelectedIdx(prev => prev - 1);
+        }
+    }
+
     return (
         <ScenePage
             backgroundUrl={'image/bg6.webp'}
             currentChat={chat}
-            onEnded={() => handleKeyDown()}
+            onEnded={() => handle()}
         />
     );
 }
