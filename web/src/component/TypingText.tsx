@@ -1,23 +1,26 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Dispatch, SetStateAction} from "react";
 
 interface TypingTextProps {
     text: string;
+    value: string;
+    onChange: Dispatch<SetStateAction<string>>;
     speed: number;
     onEnded: () => void;
 }
 
-export default function TypingText(
+function TypingText(
     {
         text,
+        value,
+        onChange,
         speed,
         onEnded
     }: TypingTextProps
 ) {
     const [isEnded, setIsEnded] = useState(false);
-    const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
-        setDisplayText('');
+        onChange('');
         setIsEnded(false);
     }, [text]);
 
@@ -27,7 +30,7 @@ export default function TypingText(
                 if (isEnded) {
                     onEnded();
                 } else {
-                    setDisplayText(text);
+                    onChange(text);
                     setIsEnded(true);
                 }
             }
@@ -39,7 +42,7 @@ export default function TypingText(
         const intervalId = setInterval(() => {
             const t = text[currentIndex];
             if (t !== undefined && !isEnded) {
-                setDisplayText(prev => prev + t);
+                onChange(prev => prev + t);
                 currentIndex += 1;
             }
             if (currentIndex === text.length) {
@@ -59,7 +62,7 @@ export default function TypingText(
                 gap: 8
             }}
         >
-            <span>{displayText === '' ? '.' : displayText}</span>
+            <span>{value === '' ? '.' : value}</span>
             {isEnded && (
                 <img
                     style={{
@@ -75,3 +78,5 @@ export default function TypingText(
         </div>
     );
 };
+
+export default React.memo(TypingText);

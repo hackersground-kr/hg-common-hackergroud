@@ -5,7 +5,7 @@ const useScene = (chats: Chats[], onEnded: () => void) => {
 
     const [selectedIdx, setSelectedIdx] = useState(0);
     const chat = chats[selectedIdx];
-    console.log(selectedIdx);
+    // console.log(selectedIdx);
     const handleKeyDown = useCallback(() => {
         if (chat.disabledKeyDown) {
             return;

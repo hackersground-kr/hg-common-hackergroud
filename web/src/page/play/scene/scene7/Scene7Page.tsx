@@ -1,8 +1,13 @@
 import {SharedSceneProps} from "@src/page/play/scene/SharedSceneProps";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
-import React from "react";
+import React, {useState} from "react";
 import useScene from "@hook/useScene";
+import {Row} from "@designsystem/util/StyledFlex";
+import {Input} from "@src/component/Input.style";
+import {Button} from "@src/component/Button.style";
+import Response from "@repository/Response";
+import Repository from "@repository/Repository";
 
 export default function Scene7Page(
     {
@@ -10,7 +15,27 @@ export default function Scene7Page(
         onEnded
     }: SharedSceneProps
 ) {
-    const {chat, handleKeyDown} = useScene([
+
+    const [selectedReason, setSelectedReason] = useState<string>();
+    const [input, setInput] = useState('');
+    const [result, setResult] = useState<Response>();
+
+    const handleComplete = async () => {
+        if (!input) {
+            alert('내용을 입력해 주세요');
+            return;
+        }
+
+        try {
+            const response = await Repository.ai2(input);
+            setSelectedIdx(prev => prev + 1);
+            setResult(response);
+        } catch (e) {
+            alert('에러가 발생했습니다. ㅠㅠ 🥲');
+        }
+    };
+
+    const {setSelectedIdx, chat, handleKeyDown} = useScene([
         {
             userType: UserType.KimMinji,
             message: '시장님 의성군의 청년들입니다. 오늘 시장님에게 듣고 싶은 이야기가 많은 걸로 알고 있어요.'
@@ -38,7 +63,7 @@ export default function Scene7Page(
         },
         {
             userType: UserType.HongGilDong,
-            message: '청년들이 저희 의성에 안 오는 이유가 뭐라고 생각하십니까?'
+            message: '시장님 혹시 저희 의성이 고령화 1등지역인걸 아시나요?'
         },
         {
             userType: UserType.Hero2,
@@ -55,13 +80,17 @@ export default function Scene7Page(
         {
             // TODO: Add Select form
             userType: UserType.Hero2,
-            message: '1. 의성이 너무 시골이여서 그렇죠…?\n' +
-                '2. 놀거리가 없어서 그렇죠…?\n' +
-                '3. 일자리가 없어서 그렇죠…?'
+            message: '',
+            select: {
+                data: ['1. 의성이 너무 시골이여서', '2. 놀거리가 없어서', '3. 일자리가 없어서'],
+                onSelect: (item) => {
+                    setSelectedReason(item);
+                }
+            }
         },
         {
             userType: UserType.HongGilDong,
-            message: '맞습니다.  {선택} 때문입니다.'
+            message: `맞습니다. ${selectedReason?.substring(3)} 의성에 오지 않는 것입니다.`
         },
         {
             userType: UserType.HongGilDong,
@@ -81,21 +110,45 @@ export default function Scene7Page(
             message: '(작게 속삭이며) 시장님 무슨 대책이 있으신가요..?'
         },
         {
-            // TODO : Add Input form
             userType: UserType.Hero2,
-            message: ''
+            message: `'${selectedReason}' 문제를 해결할 수 있는 해결책을 제안하세요`,
+            disabledKeyDown: true,
+            children: () => {
+                return (
+                    <Row $alignItems={'center'} $columnGap={4}>
+                        <Input value={input} onChange={e => setInput(e.target.value)} type={'text'}/>
+                        <Button onClick={handleComplete} disabled={!input}>완료</Button>
+                    </Row>
+                )
+            }
         },
-        // TODO: Add GPT
+        {
+            userType: UserType.HongGilDong,
+            message: result?.message ?? ''
+        },
         {
             userType: UserType.KimMinji,
             message: '시장님 또 한건 처리하셨군요!!!'
         },
     ], onEnded);
+
+    const handle = () => {
+        if (!result) {
+            handleKeyDown();
+            return;
+        }
+        if (result?.state) {
+            handleKeyDown();
+        } else {
+            setSelectedIdx(prev => prev - 1);
+        }
+    };
+
     return (
         <ScenePage
             backgroundUrl={'image/bg7.png'}
             currentChat={chat}
-            onEnded={() => handleKeyDown()}
+            onEnded={handle}
         />
     );
 }

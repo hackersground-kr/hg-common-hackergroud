@@ -17,6 +17,22 @@ export default function Scene6Page(
 ) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
+
+    const handleComplete = async () => {
+        if (!input) {
+            alert('내용을 입력해 주세요');
+            return;
+        }
+
+        try {
+            const response = await Repository.ai1(input);
+            setSelectedIdx(prev => prev + 1);
+            setResult(response);
+        } catch (e) {
+            alert('에러가 발생했습니다. ㅠㅠ 🥲');
+        }
+    }
+
     const {setSelectedIdx, chat, handleKeyDown} = useScene([
         {
             userType: UserType.KimMinji,
@@ -37,9 +53,9 @@ export default function Scene6Page(
         },
         {
             userType: UserType.Hero2,
-            message: '(의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까…?)',
+            message: '(의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까..?)',
             disabledKeyDown: true,
-            children: (action) => {
+            children: () => {
                 return <Row $alignItems={'center'} $columnGap={4}>
                     <Input
                         value={input} onChange={e => setInput(e.target.value)}
@@ -47,21 +63,7 @@ export default function Scene6Page(
                         onKeyDown={event => event.stopPropagation()}
                         placeholder={'내용을 입력해 주세요'}
                     />
-                    <Button disabled={!input} onClick={async () => {
-                        if (!input) {
-                            alert('내용을 입력해 주세요');
-                            return;
-                        }
-
-                        try {
-                            const response = await Repository.ai1(input);
-                            action();
-                            setSelectedIdx(prev => prev + 1);
-                            setResult(response);
-                        } catch (e) {
-                            alert('에러가 발생했습니다. ㅠㅠ 🥲');
-                        }
-                    }}>완료</Button>
+                    <Button disabled={!input} onClick={handleComplete}>완료</Button>
                 </Row>
             }
         },
@@ -85,13 +87,13 @@ export default function Scene6Page(
         } else {
             setSelectedIdx(prev => prev - 1);
         }
-    }
+    };
 
     return (
         <ScenePage
             backgroundUrl={'image/bg6.webp'}
             currentChat={chat}
-            onEnded={() => handle()}
+            onEnded={handle}
         />
     );
 }

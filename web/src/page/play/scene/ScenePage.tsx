@@ -1,7 +1,7 @@
 import * as S from './ScenePage.style';
 import {Background} from "@src/component/Background.style";
 import {Chats, UserDictionary} from "@src/@types/types";
-import React from "react";
+import React, {useState} from "react";
 import TypingText from "@src/component/TypingText";
 import PlaySong from '@src/designsystem/util/PlaySong';
 import SelectText from '@src/component/SelectText';
@@ -14,13 +14,15 @@ interface ScenePageProps {
     onEnded: () => void;
 }
 
-export default function ScenePage(
+function ScenePage(
     props: ScenePageProps
 ) {
 
     const location = useLocation();
     const name = location.state.name;
     const user = UserDictionary[props.currentChat.userType];
+
+    const [displayText, setDisplayText] = useState('');
 
     return (
         <S.Container>
@@ -39,19 +41,21 @@ export default function ScenePage(
                         style={{
                             marginLeft: 40
                         }}
-                        src={user.image} width={256} alt=""
+                        src={user.image} width={256} alt={""}
                     />
                     {/*256 = 2 ^ 8 ㅋㅋ 깔끔하죠?*/}
                     <S.Chat>
                         <S.Name>
                             {user.name ?? name}
                         </S.Name>
-                        {props.currentChat.isLoading === true && (
+                        {props.currentChat.isLoading && (
                             <Loader/>
                         )}
                         {!props.currentChat.select && props.currentChat.isLoading !== true && (
                             <TypingText
                                 text={props.currentChat.message}
+                                value={displayText}
+                                onChange={setDisplayText}
                                 speed={50}
                                 onEnded={props.onEnded}
                             />
@@ -61,15 +65,16 @@ export default function ScenePage(
                                 texts={props.currentChat.select.data}
                                 onEnded={(text: string) => {
                                     props.currentChat.select?.onSelect?.(text);
+                                    props.onEnded();
                                 }}
                             />
                         )}
-                        {props.currentChat.children && props.currentChat.children(() => {
-                            props.onEnded()
-                        })}
+                        {props.currentChat.children && props.currentChat.children()}
                     </S.Chat>
                 </div>
             </S.Content>
         </S.Container>
     );
-};
+}
+
+export default React.memo(ScenePage);

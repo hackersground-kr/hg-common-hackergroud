@@ -13,7 +13,7 @@ export interface Chats {
     isLoading?: boolean;
     select?: SelectProps;
     disabledKeyDown?: boolean;
-    children?: (action: () => void) => React.ReactNode;
+    children?: () => React.ReactNode;
 }
 
 export enum UserType {
