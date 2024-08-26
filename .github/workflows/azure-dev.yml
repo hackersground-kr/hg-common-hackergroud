@@ -30,8 +30,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Inject Secrets into YAML
-        run: echo "${{ secrets.APPLICATION }}" > server/src/main/resources/application.yml
-             cat server/src/main/resources/application.yml
+        run: |
+          echo "spring:
+  ai:
+    azure:
+      openai:
+        api-key: ${AZURE_OPENAI_API_KEY}
+        endpoint: ${AZURE_OPENAI_ENDPOINT}
+        chat:
+          options:
+            deployment-name: gpt-4o
+        image:
+          options:
+            deployment-name: dall-e-3" > server/src/main/resources/application.yml
+        env:
+          AZURE_OPENAI_API_KEY: ${{ secrets.KET }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.ENDPOINT }}
 
 
           
