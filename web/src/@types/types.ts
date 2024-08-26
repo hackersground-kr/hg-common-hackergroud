@@ -1,8 +1,9 @@
 export interface Chats {
     userType: UserType;
-    message: string;
+    message: string | string[];
     music?: string;
     vibration?: boolean;
+    callback?: (text: string) => void;
 }
 
 export enum UserType {
