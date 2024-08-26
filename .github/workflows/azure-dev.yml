@@ -37,8 +37,9 @@ jobs:
             ai:
               azure:
                 openai:
-                  api-key: ${ { secrets.KEY } }
-                  endpoint: ${ { secrets.ENDPOINT } }
+                  api-key: ${{ secrets.KEY }}
+                  endpoint: ${{ secrets.ENDPOINT }}
+
                   chat:
                     options:
                       deployment-name: gpt-4o
