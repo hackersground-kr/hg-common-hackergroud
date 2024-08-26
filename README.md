@@ -70,7 +70,7 @@ https://docs.docker.com/desktop/install/mac-install/
 
 <img width="208" alt="스크린샷 2024-08-26 오후 2 37 48" src="https://github.com/user-attachments/assets/cbd577f5-2419-4719-b713-dd784d70d1a0">
 
-오른쪽 위 톱니바퀴모양 (설정)을 클릭한 뒤 Project Constructor를 클릭해주세요.
+오른쪽 위 톱니바퀴모양 (설정)을 클릭한 뒤 Project Constructure를 클릭해주세요.
 
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/84149ac1-4bb9-4a33-84f4-b021544c7d8a">
 
