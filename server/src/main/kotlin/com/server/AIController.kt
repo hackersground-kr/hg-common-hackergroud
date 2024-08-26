@@ -36,4 +36,12 @@ class AIController(
         return aiService.sin3(request.text)
     }
 
+    @PostMapping("/4")
+    fun sin4(
+        @RequestBody sin4Request: Sin4Request
+    ): Any {
+        return aiService.sin4(sin4Request)
+    }
+
+
 }

@@ -1,13 +1,18 @@
 package com.server
 
 import org.springframework.ai.azure.openai.AzureOpenAiChatModel
+import org.springframework.ai.azure.openai.AzureOpenAiImageModel
+import org.springframework.ai.azure.openai.AzureOpenAiImageOptions
+import org.springframework.ai.image.ImagePrompt
+import org.springframework.ai.image.ImageResponse
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.CrossOrigin
 
 @Service
 @CrossOrigin(origins = ["*"])
 class AiService(
-    private val chatModel: AzureOpenAiChatModel
+    private val chatModel: AzureOpenAiChatModel,
+    private val openaiImageOpenAiChatModel: AzureOpenAiImageModel
 ) {
 
 
@@ -77,6 +82,17 @@ class AiService(
                 )
 
         return chatModel.call(promptTemplate)
+    }
+
+    fun sin4(sin4Request: Sin4Request): Any {
+
+        val prompt = (
+                "의성의 여러 정책들인데 이 정책들을 바탕으로 대한민국 의성이 변화하는 모습의 그림을 하나를 만들어줘  표현해줘" +
+                "${sin4Request.sin1}\n" + "${sin4Request.sin2}\n" + "${sin4Request.sin3}\n"
+                )
+
+        val imgPrompt =  ImagePrompt(prompt, AzureOpenAiImageOptions())
+        return openaiImageOpenAiChatModel.call(imgPrompt).result.output.url
     }
 
 }

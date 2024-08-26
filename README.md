@@ -32,14 +32,33 @@
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 <br>
 인텔리제이, 도커 데스크탑, 도커 엔진, Azure 계정 (Hackerground에 권한이 있는), 깃허브 계정, 자바 jdk-17 , 맥북으로 배포 절차를 구성하였습니다 맥북으로 진행해주세요.
-
+<br>
 준비사항이 의미가 없군요..
 
 https://www.jetbrains.com/ko-kr/idea/download/
+<br>
 https://docs.docker.com/desktop/install/mac-install/
 
-위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.
-회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.
+위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
+
+인텔리제이와 도커 데스크탑의 경우 본인에게 맞는 설치방법을 고르세요.<br>
+
+window에서 설치
+<br>
+https://aday7.tistory.com/entry/IntelliJ-설치-및-기본-환경-설정-가이드
+<br>
+https://velog.io/@bi-sz/IntelliJ-환경-구성하기
+<br>
+mac에서 설치
+<br>
+https://priming.tistory.com/124
+<br>
+https://code-lab1.tistory.com/260
+<br>
+참조하시면 좋을 것 같습니다.
+
+회원가입을 하라면 회원가입, 로그인 하라면 로그인 하고 설치 혹은 사용하세요.<br>
+<br>
 
 다 설치가 되셨다면 둘다 한번씩 실행해보세요.
 
@@ -113,7 +132,6 @@ JDK가 없다면 Download JDK를 클릭해 버전은 17로, Vendor는 Oracle Ope
 ![image](images/10.png)
 
 프로젝트가 이렇게 켜졌다면 반정도 성공하신겁니다. <br>
-~~여기까지 하셨다면 체크포인트 느낌으로 저한테 해커그라운드 잡담방에 중간정도완료!! 보내주세요...ㅎ 가능하시면...말이죠..~~
 
 
 !중요 도커가 실행중이여야합니다!
@@ -145,6 +163,8 @@ azd auth login --check-status
 로그인 체크가 완료되었다면 명령어창에 아래와 같이 입력합니다.
 
 ```bash
+cd
+cd Downloads/hg-common-hackergroud
 azd init -e common-hackergroud
 ```
 
