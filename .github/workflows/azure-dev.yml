@@ -30,7 +30,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Inject Secrets into YAML
-        run:  echo "${{ secrets.APPLICATION }}" > server/src/main/resources/application.yml
+        run: echo "${{ secrets.APPLICATION }}" > server/src/main/resources/application.yml
+             cat server/src/main/resources/application.yml
 
 
           
