@@ -27,7 +27,7 @@ export default function Scene8Page(
         }
         setIsLoading(true)
         try {
-            const response = await Repository.ai1(input);
+            const response = await Repository.ai3(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
         } catch (e) {
