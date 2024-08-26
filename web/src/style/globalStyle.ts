@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         //font-family: "Wanted Sans Variable", "Wanted Sans", sans-serif !important;
-        font-family: "Elice DX Neolli OTF", sans-serif !important;
+        font-family: "Elice DX Neolli", sans-serif !important;
     }
 
     .blinking-text {
