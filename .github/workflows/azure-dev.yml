@@ -31,8 +31,7 @@ jobs:
 
       - name: Create application.yml with secrets
         run: |
-          mkdir -p ./src/main/resources
-          cat <<EOF > ./src/main/resources/application.yml
+          cat ./src/main/resources/application.yml
           spring:
             ai:
               azure:
