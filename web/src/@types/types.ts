@@ -18,7 +18,7 @@ export interface Chats {
     isLoading?: boolean;
     select?: SelectProps;
     // input?: InputProps;
-    children?: React.ReactNode;
+    children?: (action: () => void) => React.ReactNode;
 }
 
 export enum UserType {

@@ -4,6 +4,9 @@ import Response from "@repository/Response";
 
 const usAxios = axios.create({
     baseURL: config.baseUrl,
+    headers: {
+        Accept: "application/json"
+    }
 });
 
 class Repository {

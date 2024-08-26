@@ -2,52 +2,38 @@ import * as S from './ScenePage.style';
 import {Background} from "@src/component/Background.style";
 import {Chats, UserDictionary} from "@src/@types/types";
 import React, {useState} from "react";
-import {useLocation} from "react-router-dom";
 import TypingText from "@src/component/TypingText";
 import PlaySong from '@src/designsystem/util/PlaySong';
 import SelectText from '@src/component/SelectText';
 import Loader from '@src/component/loader/Loader';
+import {useLocation} from "react-router-dom";
 
 interface ScenePageProps {
     backgroundUrl: string;
-    chats: Chats[];
+    currentChat: Chats;
     onEnded: () => void;
 }
 
 export default function ScenePage(
-    {
-        backgroundUrl,
-        chats,
-        onEnded
-    }: ScenePageProps
+    props: ScenePageProps
 ) {
+
     const location = useLocation();
-    const [selectedIdx, setSelectedIdx] = useState(0);
-    const chat = chats[selectedIdx];
-    const user = UserDictionary[chat.userType];
     const name = location.state.name;
-
-    function handleKeyDown() {
-        if (selectedIdx + 1 >= chats.length) {
-            onEnded();
-            return;
-        }
-
-        setSelectedIdx(i => i + 1);
-    }
+    const user = UserDictionary[props.currentChat.userType];
 
     return (
         <S.Container>
-            <PlaySong path={chat.music}/>
-            <Background url={backgroundUrl}/>
+            <PlaySong path={props.currentChat.music}/>
+            <Background url={props.backgroundUrl}/>
             <S.Content>
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        animation: chat.vibration ? 'vibrate .1s linear 10' : undefined,
+                        animation: props.currentChat.vibration ? 'vibrate .1s linear 10' : undefined,
                     }}
-                    className={chat.vibration ? '' : 'fade-in-up'}
+                    className={props.currentChat.vibration ? '' : 'fade-in-up'}
                 >
                     <img
                         style={{
@@ -60,25 +46,27 @@ export default function ScenePage(
                         <S.Name>
                             {user.name ?? name}
                         </S.Name>
-                        {chat.isLoading === true && (
+                        {props.currentChat.isLoading === true && (
                             <Loader/>
                         )}
-                        {!chat.select && chat.isLoading !== true && (
+                        {!props.currentChat.select && props.currentChat.isLoading !== true && (
                             <TypingText
-                                text={chat.message}
+                                text={props.currentChat.message}
                                 speed={50}
-                                onEnded={handleKeyDown}
+                                onEnded={props.onEnded}
                             />
                         )}
-                        {chat.select && chat.isLoading !== true && (
+                        {props.currentChat.select && props.currentChat.isLoading !== true && (
                             <SelectText
-                                texts={chat.select.data}
+                                texts={props.currentChat.select.data}
                                 onEnded={(text: string) => {
-                                    chat.select?.onSelect?.(text);
+                                    props.currentChat.select?.onSelect?.(text);
                                 }}
                             />
                         )}
-                        {chat.children && chat.children}
+                        {props.currentChat.children && props.currentChat.children(() => {
+                            props.onEnded()
+                        })}
                     </S.Chat>
                 </div>
             </S.Content>
