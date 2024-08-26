@@ -44,8 +44,23 @@ https://www.jetbrains.com/ko-kr/idea/download/ 에 접근하여 스크롤을 내
 ![image](https://github.com/user-attachments/assets/52be0539-651d-4179-b481-1f1259b42113)
 다음과 같이 컴퓨터를 재시작합니다.
 
+윈도우 검색창에 intellj 를 검색하여 IDE를 실행합니다.
+![image](https://github.com/user-attachments/assets/2a1155ac-ecce-4bfc-b332-337461ce8bee)
+
+약관에 동의후 오른쪽 하단의 계속 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/937130d3-46a0-4b7a-a356-d691cfd64415)
+
+오른쪽 하단의 "보내지 않음" 버튼을 누릅니다.
+![image](https://github.com/user-attachments/assets/836dad90-e35a-484d-b0d9-1fa225cc7585)
+
+이후 인텔리제이 프로그램을 종료합니다.
+
 <br>
 https://www.docker.com/products/docker-desktop/
+
+위 링크를 클릭해 사이트에 접속 후 약 3초 기다렸다가 아래 이미지와 같이 다운로드합니다.
+![image](https://github.com/user-attachments/assets/8f40a35d-7304-473a-965f-5ddedc81a5bd)
+
 
 위에 링크를 클릭해 순서대로 인텔리제이, 도커를 설치하세요.<br>
 
