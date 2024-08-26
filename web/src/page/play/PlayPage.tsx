@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserDictionary, UserType} from "@src/@types/types";
 import {useLocation} from "react-router-dom";
 import {josa} from "es-hangul";
+import DialogTemplate from "@src/component/dialog/DialogTemplate";
+import PlaySong from "@src/designsystem/util/PlaySong";
 import EndDialog from "@src/component/dialog/enddialog/EndDialog";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(12);
+    const [scene, setScene] = useState(0);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
@@ -15,6 +17,18 @@ export default function PlayPage() {
     function nextScene() {
         setScene(scene + 1);
     }
+
+    function preloadMusics() {
+        const audioSource = ["phone_vibe.mp3", "knock.mp3", "door_open.mp3", "clap.mp3", "end.mp3", "car_draft.mp3"]
+        audioSource.forEach((item) => {
+            const audio = new Audio(`music/${item}`)
+            audio.load();  // add this line
+        })
+    }
+
+    useEffect(() => {
+        preloadMusics()
+    }, [])
 
     return (
         <>
@@ -38,7 +52,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '그러고는 업무 확인을 하기 위해 폰을 본다.'
+                            message: '그러고는 업무 확인을 하기 위해 폰을 본다.',
                         },
                         {
                             userType: UserType.Hero,
@@ -47,7 +61,8 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Narration,
-                            message: '탁자 위에 놓인 휴대폰의 알림을 확인하자 밤새 부재중 전화 69통, 슬랙 알림 74개가 쌓여있었다.'
+                            message: '탁자 위에 놓인 휴대폰의 알림을 확인하자 밤새 부재중 전화 69통, 슬랙 알림 74개가 쌓여있었다.',
+                            music: "music/phone_vibe.mp3"
                         },
                         {
                             userType: UserType.Narration,
@@ -180,7 +195,8 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.Unknown,
-                            message: '시장님 괜찮으세요?'
+                            message: '시장님 괜찮으세요?',
+                            music: 'music/door_open.mp3'
                         },
                         {
                             userType: UserType.Narration,
@@ -442,7 +458,8 @@ export default function PlayPage() {
                         {
                             userType: UserType.Hero2,
                             message: '멈춰!! 멈추라고!!!!!!!!!!!!!',
-                            vibration: true
+                            vibration: true,
+                            music: "music/car_draft.mp3"
                         }
                     ]}
                     onEnded={() => {
