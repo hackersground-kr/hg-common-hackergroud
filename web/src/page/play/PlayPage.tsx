@@ -77,7 +77,7 @@ export default function PlayPage() {
                         },
                         {
                             userType: UserType.KangSeongMin,
-                            message: '이거 죄송하다고 해결될 문제가 아니야 너가 어제 서버를 초기화하고 잠수를 타 우리 신안 은행이 배상해야 하는 금액이 100억이야!!!!!!'
+                            message: '이거 죄송하다고 해결될 문제가 아니야 너가 어제 서버를 초기화하고 잠수를 타 우리 신안 은행이 배상해야 하는 금액이 100억이야 100억!!!!!!'
                         },
                         {
                             userType: UserType.Hero,
@@ -154,11 +154,11 @@ export default function PlayPage() {
                             message: '(거울을 본다)'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '뭐야!!!!!!!!!!!!! 누구야 이거 아니 아니 * 80000'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아니 뭐야 여긴 또 어디야'
                         },
                         {
@@ -166,7 +166,7 @@ export default function PlayPage() {
                             message: '믿을 수 없다는 듯 거울을 보고 소리친다'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아니 이 못생긴 아저씬 누구야!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
                         },
                         {
@@ -187,7 +187,7 @@ export default function PlayPage() {
                             message: '시장님 어디 아프신가요?'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '당신 누구야!?',
                             vibration: true
                         },
@@ -196,7 +196,7 @@ export default function PlayPage() {
                             message: `에이 시장님 왜 또 장난치세요.. 저 ${UserDictionary[UserType.KimMinji].name}잖아요 시장님 비서`
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '시장..? 비서..?? 뭔소리야'
                         },
                         {
@@ -204,7 +204,7 @@ export default function PlayPage() {
                             message: '장난 그만하세요 재미없어요 ㅡ.ㅡ'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '그니까 내가 시장이다..?'
                         },
                         {
@@ -212,7 +212,7 @@ export default function PlayPage() {
                             message: '네.. 의성 시.장.님.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '의성시장..? (내가 의성시장이 된거야?)'
                         },
                         {
@@ -220,7 +220,7 @@ export default function PlayPage() {
                             message: '시장님!!!!! 장난 그만 치세요!!!!!!!!! 오늘 일정이 바빠요.. 장난칠 시간이 없다고요!!'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '그래 알겠어 일정이 뭔데?'
                         },
                         {
@@ -232,11 +232,11 @@ export default function PlayPage() {
                             message: '1시에 마을 이장님이랑 면담 있으시고요 3시에 청년 농부 홍길동 님과 청년들을 위한 시장 만남회가 있습니다. 그리고 5시에 농업 관계자 박진수 님과 지역 특산물 판매전략 미팅이 잡혀있습니다.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(시장이 생각보다 바쁘게 사는구나…)'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '일단 출발하자'
                         },
                         {
@@ -271,7 +271,7 @@ export default function PlayPage() {
                             message: '이렇게 점점 시간이 지나다 보면 저희 마을이 사라질 수도 있을 것 같습니다...'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(뭔가 의성의 인구 소멸을 해결하기 위한 좋은 아이디어가 없을까…?)'
                             // TODO: Add Input
                         },
@@ -298,7 +298,7 @@ export default function PlayPage() {
                             message: '시장님 의성군의 청년들입니다. 오늘 시장님에게 듣고 싶은 이야기가 많은 걸로 알고 있어요.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(살짝 부담을 가지고 컨퍼런스 홀로 들어간다)'
                         },
                         {
@@ -306,11 +306,11 @@ export default function PlayPage() {
                             message: '청년 농부 홍길동과 몇 명의 청년들이 앉아있다'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '청년 여러분 안녕하세요 반갑습니다. 이 시간은 여러분들과 제가 만나서 저희 의성군을 더 좋은 의성으로 만들기 위해 모인 자리입니다.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '여러분들의 의견을 편하게 말해주시면 제가 최대한 반영할 수 있도록 돕겠습니다.'
                         },
                         {
@@ -323,11 +323,11 @@ export default function PlayPage() {
                             message: '청년들이 저희 의성에 안 오는 이유가 뭐라고 생각하십니까?'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(의성이 고령화 1등이야..? 몰랐는데… 일단 아는척하자)'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아.. 알죠..ㅎㅎ'
                         },
                         {
@@ -336,7 +336,7 @@ export default function PlayPage() {
                         },
                         {
                             // TODO: Add Select form
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '1. 의성이 너무 시골이여서 그렇죠…?\n' +
                                 '2. 놀거리가 없어서 그렇죠…?\n' +
                                 '3. 일자리가 없어서 그렇죠…?'
@@ -355,7 +355,7 @@ export default function PlayPage() {
                             message: '홍길동의 공격적인 발언으로 사람들이 웅성웅성한다'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아.....'
                         },
                         {
@@ -364,7 +364,7 @@ export default function PlayPage() {
                         },
                         {
                             // TODO : Add Input form
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: ''
                         },
                         // TODO: Add GPT
@@ -391,7 +391,7 @@ export default function PlayPage() {
                             message: '안녕하세요, 시장님. 오늘 참가해 주셔서 감사합니다.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '반갑습니다, 박진수 씨. 현재 상황이 어떤가요?'
                         },
                         {
@@ -403,7 +403,7 @@ export default function PlayPage() {
                             message: '이러한 문제점을 해결하려고 주말농장 체험 등을 진행했지만 여전히 못난이 과일이 잘 팔리지 않고 있습니다.'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(어떻게 해결할 수 있을까..?)'
                         },
                         // TODO: - 못난이 과일을 잼 같은 가공식품으로 만들어 판매를 지시한다.
@@ -414,7 +414,7 @@ export default function PlayPage() {
                             message: '수고하셨습니다, 시장님 오늘 모든 일정을 마치셨습니다!!'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '너도 수고했어'
                         }
                     ]}
@@ -436,7 +436,7 @@ export default function PlayPage() {
                             message: '하지만 박병춘은 집을 가던 중 의문의 교통사고를 당하고...'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '멈춰!! 멈추라고!!!!!!!!!!!!!',
                             vibration: true
                         }
@@ -451,11 +451,11 @@ export default function PlayPage() {
                     backgroundUrl={'image/bg5.png'}
                     chats={[
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '뭐야...'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '여긴 어디지…? 천국인가'
                         }
                     ]}
@@ -469,24 +469,24 @@ export default function PlayPage() {
                     backgroundUrl={'image/bg3.png'}
                     chats={[
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '뭐야 집이잖아?'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아니 꿈이었어'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '아니 현실이 아니라 꿈이었어!!!!!!!!!!',
                             vibration: true
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '꿈이 뭐 이렇게 생생한 거야...'
                         },
                         {
-                            userType: UserType.Hero,
+                            userType: UserType.Hero2,
                             message: '(머리를 감싸며) 무슨 일이 있었던 거지..?'
                         }
                     ]}

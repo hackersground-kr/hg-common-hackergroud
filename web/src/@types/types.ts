@@ -3,11 +3,13 @@ export interface Chats {
     message: string | string[];
     music?: string;
     vibration?: boolean;
+    isLoading?: boolean;
     callback?: (text: string) => void;
 }
 
 export enum UserType {
     Hero,
+    Hero2,
     Narration,
     KangSeongMin,
     KimMinji,
@@ -25,6 +27,9 @@ export const UserDictionary: {
 } = {
     [UserType.Hero]: {
         image: 'image/char3.png',
+    },
+    [UserType.Hero2]: {
+        image: 'image/char6.png',
     },
     [UserType.Narration]: {
         name: '나레이션',
