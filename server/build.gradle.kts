@@ -43,6 +43,12 @@ kotlin {
     }
 }
 
+
+tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    destinationDirectory.set(file("./gradle/wrapper"))
+    archiveFileName.set("server-${version}.jar")
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
