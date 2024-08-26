@@ -373,6 +373,167 @@ export default function PlayPage() {
                     }}
                 />
             )}
+            {scene === 7 && (
+                <ScenePage
+                    backgroundUrl={'bg8.png'}
+                    chats={[
+                        {
+                            userType: UserType.Narration,
+                            message: '시장님 지역특산물 농업 관계자 박진수씨 입니다.'
+                        },
+                        {
+                            userType: UserType.ParkJinSoo,
+                            message: '안녕하세요, 시장님. 오늘 참가해주셔서 감사합니다.'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '반갑습니다, 박진수 씨. 현재 상황이 어떤가요?'
+                        },
+                        {
+                            userType: UserType.ParkJinSoo,
+                            message: '최근 기상 이변으로 인해 특산물인 납작 복숭아 등에서 못난이 과일의 비율이 무려 20%나 달하고 있습니다. 이로 인해 판매에 큰 어려움을 겪고 있습니다. '
+                        },
+                        {
+                            userType: UserType.ParkJinSoo,
+                            message: '이러한 문제점을 해결하려고 주말 농장 체험등을 진행했지만 여전히 못난이 과일이 잘 팔리지 않고 있습니다.'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '[어떻게 해결할 수 있을까..?]'
+                        },
+                        // TODO: - 못난이 과일을 잼 같은 가공식품으로 만들어 판매를 지시한다.
+                        // TODO: - [의견 적기] (GPT)
+                        // TODO: - more GPT
+                        {
+                            userType: UserType.KimMinji,
+                            message: '수고하셨습니다, 시장님 오늘 모든 일정을 마치셨습니다!!'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '너도 수고했어'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 8 && (
+                <ScenePage
+                    backgroundUrl={'image/bg9.png'}
+                    chats={[
+                        {
+                            userType: UserType.Narration,
+                            message: '박병춘은 일정 내내 성실하게 의성군의 사회문제를 해결하려고 노력하는 모습을 본 모두. 박병춘은 의성군 시민들이 가장 존경하는 사람으로 거듭나게 된다.'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '하지만 박병춘은 집을 가던중 의문의 교통사고를 당하고….'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '멈춰!! 멈추라고!!!!!!!!!!!!!'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 9 && (
+                <ScenePage
+                    backgroundUrl={'image/bg5.png'}
+                    chats={[
+                        {
+                            userType: UserType.Hero,
+                            message: '뭐야...'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '여긴 어디지…? 천국인가'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 10 && (
+                <ScenePage
+                    backgroundUrl={'image/bg3.png'}
+                    chats={[
+                        {
+                            userType: UserType.Hero,
+                            message: '뭐야 집이잖아?'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '아니 꿈이였어'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '아니 현실이 아니라 꿈이였어!!!!!!!!!!',
+                            vibration: true
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '꿈이 뭐 이렇게 생생한거야…..'
+                        },
+                        {
+                            userType: UserType.Hero,
+                            message: '(머리를 감싸며) 무슨 일이 있었던거지….?'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 11 && (
+                <ScenePage
+                    backgroundUrl={'image/bg10.png'}
+                    chats={[
+                        {
+                            userType: UserType.Narration,
+                            message: '박병춘은 한참동안 생각에 잠겼다'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '그리고 끝내 결심했다'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '개발자로 취업을 하지 않기로'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '그리고 의성으로 떠나기로 결심했다'
+                        }
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
+            {scene === 12 && (
+                <ScenePage
+                    backgroundUrl={'image/'}
+                    chats={[
+                        {
+                            userType: UserType.Narration,
+                            message: '의성으로 떠난지 5년뒤...'
+                        },
+                        {
+                            userType: UserType.Narration,
+                            message: '박병춘은 의성 시장으로 당선됐고 예전 꿈에서 자신이 답변한 공약을 바탕으로 의성의 사회문제를 해결해 나갔다.'
+                        }
+                        // TODO: (플레이어가 답변한 공략 3개 [서버 API호출])
+                    ]}
+                    onEnded={() => {
+                        nextScene();
+                    }}
+                />
+            )}
         </>
     );
 }

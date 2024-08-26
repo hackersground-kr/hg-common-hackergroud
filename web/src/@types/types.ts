@@ -12,6 +12,7 @@ export enum UserType {
     KimMinji,
     KimChunBae,
     HongGilDong,
+    ParkJinSoo,
     Unknown
 }
 
@@ -43,6 +44,10 @@ export const UserDictionary: {
     [UserType.HongGilDong]: {
         name: '홍길동',
         image: 'image/char2.png',
+    },
+    [UserType.ParkJinSoo]: {
+        name: '박진수',
+        image: 'image/char5.png',
     },
     [UserType.Unknown]: {
         name: '??',
