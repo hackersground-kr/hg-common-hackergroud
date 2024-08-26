@@ -92,7 +92,7 @@ class AiService(
                 )
 
         val imgPrompt =  ImagePrompt(prompt, AzureOpenAiImageOptions())
-        return openaiImageOpenAiChatModel.call(imgPrompt).result.output.url
+        return "{ \"value\" : \"${openaiImageOpenAiChatModel.call(imgPrompt).result.output.url}\"}"
     }
 
 }
