@@ -46,7 +46,7 @@ export default function Scene6Page(
                         type="text"
                         onKeyDown={event => event.stopPropagation()}
                     />
-                    <Button onClick={async () => {
+                    <Button disabled={!input} onClick={async () => {
                         if (!input) {
                             alert('내용을 입력해 주세요');
                             return;
