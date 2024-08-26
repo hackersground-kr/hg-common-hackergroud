@@ -8,7 +8,7 @@ services:
     ports:
       - 8080:8080
     networks:
-      - network
+      - common
 
   frontend:
     build:
@@ -20,7 +20,8 @@ services:
     depends_on:
       - backend
     networks:
-      - network
+      - common
 
 networks:
-  network:
+  common:
+    driver: bridge
