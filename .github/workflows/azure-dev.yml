@@ -29,23 +29,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create application.yml with secrets
+      - name: Inject Secrets into YAML
         run: |
-          cat ./server/src/main/resources/application.yml
-          spring:
-            ai:
-              azure:
-                openai:
-                  api-key: ${{ secrets.KEY }}
-                  endpoint: ${{ secrets.ENDPOINT }}
+          sed -i "s/{ secret.KEY }/${{ secrets.KEY }}/g" server/src/main/resources/application.yml
+          sed -i "s/{ secret.ENDPOINT }/${{ secrets.ENDPOINT }}/g" server/src/main/resources/application.yml
 
-                  chat:
-                    options:
-                      deployment-name: gpt-4o
-                  image:
-                    options:
-                      deployment-name: dall-e-3
-          EOF
 
           
       - uses: actions/checkout@v3
