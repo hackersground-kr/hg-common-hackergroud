@@ -33,6 +33,7 @@ jobs:
         run: |
           sed -i "s|{ secret.KEY }|${{ secrets.KEY }}|g" server/src/main/resources/application.yml
           sed -i "s|{ secret.ENDPOINT }|${{ secrets.ENDPOINT }}|g" server/src/main/resources/application.yml
+          cat server/src/main/resources/application.yml
 
 
           
