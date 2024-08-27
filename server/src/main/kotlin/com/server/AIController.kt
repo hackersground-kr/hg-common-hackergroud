@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/ai")
 @CrossOrigin(origins = ["*"])
 class AIController(
+    private val store: StoreService,
     private val aiService: AiService
 ) {
 
@@ -40,6 +41,7 @@ class AIController(
     fun sin4(
         @RequestBody sin4Request: Sin4Request
     ): Any {
+        store.add(sin4Request)
         return aiService.sin4(sin4Request)
     }
 
