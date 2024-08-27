@@ -12,24 +12,24 @@ export default function Scene11Page(
 ) {
     const {chat, handleKeyDown} = useScene([
         {
-            userType: UserType.Hero2,
+            userType: UserType.Hero,
             message: '뭐야 집이잖아?'
         },
         {
-            userType: UserType.Hero2,
+            userType: UserType.Hero,
             message: '아니 꿈이었어'
         },
         {
-            userType: UserType.Hero2,
+            userType: UserType.Hero,
             message: '아니 현실이 아니라 꿈이었어!!!!!!!!!!',
             vibration: true
         },
         {
-            userType: UserType.Hero2,
+            userType: UserType.Hero,
             message: '꿈이 뭐 이렇게 생생한 거야...'
         },
         {
-            userType: UserType.Hero2,
+            userType: UserType.Hero,
             message: '(머리를 감싸며) 무슨 일이 있었던 거지..?'
         }
     ], onEnded);
