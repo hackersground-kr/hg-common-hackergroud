@@ -31,7 +31,7 @@ export default function Scene8Page(
             const response = await Repository.ai3(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
-            cookie1.setCookie(sin.s3, response.message);
+            cookie1.setCookie(sin.s3, input);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
         } finally {
