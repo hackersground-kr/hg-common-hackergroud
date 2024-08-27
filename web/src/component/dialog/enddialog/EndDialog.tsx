@@ -38,7 +38,7 @@ export default function EndDialog(
                     <StartButton
                         onClick={() => {
                             if (!wow) return;
-                            window.open('https://forms.gle/SMSCFjSKxwUYnr9v6\n');
+                            window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQpylWNUNEFKU0EwUVoxWVJQR1pNSE1EVzZWSDNGVC4u');
                         }}
                     >
                         시작하기
