@@ -18,7 +18,7 @@ import FutureDialog from "@src/component/dialog/futuredialog/FutureDialog";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(6);
+    const [scene, setScene] = useState(0);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
