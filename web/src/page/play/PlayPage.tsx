@@ -20,7 +20,7 @@ import useNav from "@hook/useNav";
 export default function PlayPage() {
 
     const {toHome} = useNav();
-    const [scene, setScene] = useState(0);
+    const [scene, setScene] = useState(1);
     const location = useLocation();
     const name = location.state.name;
     if (!name) {
