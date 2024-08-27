@@ -32,7 +32,7 @@ export default function Scene7Page(
             const response = await Repository.ai2(input, selectedReason ?? '');
             setSelectedIdx(prev => prev + 1);
             setResult(response);
-            cookie1.setCookie(sin.s2, response.message);
+            cookie1.setCookie(sin.s2, input);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
         } finally {
