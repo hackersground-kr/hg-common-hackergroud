@@ -100,6 +100,7 @@ export default function Scene8Page(
 
 
     const handle = () => {
+        console.log(result);
         if (!result) {
             handleKeyDown();
             return;

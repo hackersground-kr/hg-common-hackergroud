@@ -75,6 +75,7 @@ export default function FutureDialog(
                         </div>
                     )
                     }
+                    <div style={{width: 12}}></div>
                     <StartButton
                         style={{
                             minWidth: 80,

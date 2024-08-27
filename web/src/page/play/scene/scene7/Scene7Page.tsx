@@ -30,7 +30,7 @@ export default function Scene7Page(
         }
         setIsLoading(true);
         try {
-            const response = await Repository.ai2(input);
+            const response = await Repository.ai2(input, selectedReason ?? '');
             setSelectedIdx(prev => prev + 1);
             setResult(response);
             if (setReq) {

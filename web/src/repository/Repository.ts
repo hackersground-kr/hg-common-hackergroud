@@ -19,9 +19,10 @@ class Repository {
         return data;
     }
 
-    async ai2(prompt: string): Promise<Response> {
+    async ai2(prompt: string, problem: string): Promise<Response> {
         const {data} = await usAxios.post("ai/2", {
             text: prompt,
+            problem
         });
         return data;
     }
