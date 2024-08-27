@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {useLocation} from "react-router-dom";
 import EndDialog from "@src/component/dialog/enddialog/EndDialog";
 import Scene1Page from "@src/page/play/scene/scene1/Scene1Page";
 import Scene2Page from "@src/page/play/scene/scene2/Scene2Page";
@@ -16,21 +15,20 @@ import Scene12Page from "@src/page/play/scene/scene12/Scene12Page";
 import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
 import FutureDialog from "@src/component/dialog/futuredialog/FutureDialog";
 import useNav from "@hook/useNav";
+import cookie1, {nameKey} from "@lib/cookie";
 
 export default function PlayPage() {
 
     const {toHome} = useNav();
     const [scene, setScene] = useState(1);
-    const location = useLocation();
-    const name = location.state.name;
+    let name = cookie1.getCookie(nameKey);
     if (!name) {
         toHome();
     }
+    name = name ?? '';
     const [isShowEndDialog, setIsShowEndDialog] = useState(false);
 
     const [isShowFutureDialog, setIsShowFutureDialog] = useState(false)
-
-    const [playData, setPlayData] = useState<string[]>([])
 
     function nextScene() {
         setScene(scene + 1);

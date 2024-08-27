@@ -6,8 +6,8 @@ import TypingText from "@src/component/TypingText";
 import PlaySong from "@src/designsystem/util/PlaySong";
 import SelectText from "@src/component/SelectText";
 import Loader from "@src/component/loader/Loader";
-import {useLocation} from "react-router-dom";
 import useNav from "@hook/useNav";
+import cookie1, {nameKey} from "@lib/cookie";
 
 interface ScenePageProps {
     backgroundUrl: string;
@@ -17,8 +17,7 @@ interface ScenePageProps {
 
 function ScenePage(props: ScenePageProps) {
     const {toHome} = useNav();
-    const location = useLocation();
-    const name = location.state.name;
+    const name = cookie1.getCookie(nameKey);
     if (!name) {
         toHome();
     }

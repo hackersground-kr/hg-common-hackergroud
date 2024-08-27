@@ -1,5 +1,7 @@
 import cookie from "js-cookie";
 
+export const nameKey = 'namekey';
+
 class Cookie {
     public getCookie(key: string): string | undefined {
         let item = undefined;

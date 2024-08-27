@@ -4,6 +4,7 @@ import {Background} from "@src/component/Background.style";
 import ExpandRight from "@designsystem/foundation/iconography/icons/ExpandRight";
 import {useNavigate} from "react-router-dom";
 import {StartButton} from "@src/component/StartButton.style";
+import cookie1, {nameKey} from "@lib/cookie";
 
 export default function StartPage() {
 
@@ -101,11 +102,8 @@ export default function StartPage() {
                     <S.StartButtonContainer>
                         <StartButton
                             onClick={() => {
-                                navigate('play', {
-                                    state: {
-                                        name
-                                    }
-                                });
+                                navigate('play');
+                                cookie1.setCookie(nameKey, name);
                             }}
                         >
                             시작하기
