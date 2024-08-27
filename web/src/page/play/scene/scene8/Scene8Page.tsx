@@ -107,6 +107,7 @@ export default function Scene8Page(
         if (result?.state === 'true') {
             handleKeyDown();
         } else {
+            setResult(undefined);
             setSelectedIdx(prev => prev - 1);
         }
     };

@@ -1,7 +1,7 @@
 import {SharedSceneProps} from "@src/page/play/scene/SharedSceneProps";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Row} from "@designsystem/util/StyledFlex";
 import {Button} from "@src/component/Button.style";
 import Repository from "@src/repository/Repository";
@@ -47,7 +47,7 @@ export default function Scene6Page(
         }
     }
 
-    const {setSelectedIdx, chat, handleKeyDown} = useScene([
+    const {selectedIdx, setSelectedIdx, chat, handleKeyDown} = useScene([
         {
             userType: UserType.KimMinji,
             message: '시장님 마을 이장 김춘배씨 입니다.'
@@ -91,6 +91,10 @@ export default function Scene6Page(
         }
     ], onEnded);
 
+    useEffect(() => {
+        console.log(selectedIdx);
+    }, [selectedIdx]);
+
     const handle = () => {
         if (!result) {
             handleKeyDown();
@@ -100,6 +104,7 @@ export default function Scene6Page(
         if (result?.state === 'true') {
             handleKeyDown();
         } else {
+            setResult(undefined);
             setSelectedIdx(prev => prev - 1);
         }
     };

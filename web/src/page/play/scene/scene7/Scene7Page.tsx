@@ -154,6 +154,7 @@ export default function Scene7Page(
         if (result?.state === 'true') {
             handleKeyDown();
         } else {
+            setResult(undefined);
             setSelectedIdx(prev => prev - 1);
         }
     };
