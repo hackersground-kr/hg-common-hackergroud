@@ -9,6 +9,7 @@ import useScene from "@hook/useScene";
 import Response from "@repository/Response";
 import {Input} from "@src/component/Input.style";
 import {AppStateContext} from "@provider/theme/AppStateContext";
+import cookie1, {sin} from "@lib/cookie";
 
 export default function Scene6Page(
     {
@@ -19,7 +20,6 @@ export default function Scene6Page(
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
     const [isLoading, setIsLoading] = useState(false);
-    const {setReq} = useContext(AppStateContext);
 
     const handleComplete = async () => {
         if (!input) {
@@ -31,15 +31,7 @@ export default function Scene6Page(
             const response = await Repository.ai1(input);
             setSelectedIdx(prev => prev + 1);
             setResult(response);
-            if (!setReq) {
-                return;
-            }
-            setReq(i => {
-                return {
-                    ...i,
-                    sin1: response.message
-                }
-            });
+            cookie1.setCookie(sin.s1, response.message);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
         } finally {

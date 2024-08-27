@@ -1,14 +1,14 @@
 import {SharedSceneProps} from "@src/page/play/scene/SharedSceneProps";
 import ScenePage from "@src/page/play/scene/ScenePage";
 import {UserType} from "@src/@types/types";
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import useScene from "@hook/useScene";
 import {Row} from "@designsystem/util/StyledFlex";
 import {Input} from "@src/component/Input.style";
 import {Button} from "@src/component/Button.style";
 import Response from "@repository/Response";
 import Repository from "@repository/Repository";
-import {AppStateContext} from "@provider/theme/AppStateContext";
+import cookie1, {sin} from "@lib/cookie";
 
 export default function Scene7Page(
     {
@@ -21,7 +21,6 @@ export default function Scene7Page(
     const [input, setInput] = useState('');
     const [result, setResult] = useState<Response>();
     const [isLoading, setIsLoading] = useState(false);
-    const {setReq} = useContext(AppStateContext);
 
     const handleComplete = async () => {
         if (!input) {
@@ -33,14 +32,7 @@ export default function Scene7Page(
             const response = await Repository.ai2(input, selectedReason ?? '');
             setSelectedIdx(prev => prev + 1);
             setResult(response);
-            if (setReq) {
-                setReq(i => {
-                    return {
-                        ...i,
-                        sin2: response.message
-                    }
-                })
-            }
+            cookie1.setCookie(sin.s2, response.message);
         } catch (e) {
             alert('에러가 발생했습니다. ㅠㅠ 🥲');
         } finally {

@@ -1,6 +1,11 @@
 import cookie from "js-cookie";
 
 export const nameKey = 'namekey';
+export const sin = {
+    s1: 'sin1',
+    s2: 'sin2',
+    s3: 'sin3'
+};
 
 class Cookie {
     public getCookie(key: string): string | undefined {

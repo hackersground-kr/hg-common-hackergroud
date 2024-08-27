@@ -20,7 +20,6 @@ export default function Scene13Page(
     }: SharedSceneProps & Scene13PageProps
 ) {
 
-    const {req} = useContext(AppStateContext);
     const [res, setRes] = useState<string>();
     const [isLoading, setIsLoading] = useState(false);
 

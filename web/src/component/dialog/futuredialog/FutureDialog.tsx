@@ -8,6 +8,8 @@ import React, {useContext, useEffect, useState} from "react";
 import PlaySong from '@src/designsystem/util/PlaySong';
 import Repository from "@repository/Repository";
 import { AppStateContext } from '@src/provider/theme/AppStateContext';
+import ImgGenReq from "@repository/ImgGenReq";
+import cookie1, {sin} from "@lib/cookie";
 
 interface FutureDialogProps {
     dismiss: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -20,12 +22,16 @@ export default function FutureDialog(
         next
     }: FutureDialogProps
 ) {
-    const {req} = useContext(AppStateContext);
     const [wow, setWow] = useState(false);
     const [res, setRes] = useState<string>();
 
     const gen = async () => {
         try {
+            const req: ImgGenReq = {
+                sin1: cookie1.getCookie(sin.s1) ?? '',
+                sin2: cookie1.getCookie(sin.s2) ?? '',
+                sin3: cookie1.getCookie(sin.s3) ?? '',
+            }
             const res = await Repository.ai4(req);
             setRes(res.value);
         } catch (e) {
