@@ -2,8 +2,8 @@ spring:
   ai:
     azure:
       openai:
-        api-key: KEY
-        endpoint: ENDPOINT
+        api-key: {KEY}
+        endpoint: {ENDPOINT}
         chat:
           options:
             deployment-name: gpt-4o
