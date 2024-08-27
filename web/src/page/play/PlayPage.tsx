@@ -14,13 +14,18 @@ import Scene10Page from "@src/page/play/scene/scene10/Scene10Page";
 import Scene11Page from "@src/page/play/scene/scene11/Scene11Page";
 import Scene12Page from "@src/page/play/scene/scene12/Scene12Page";
 import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
+import FutureDialog from "@src/component/dialog/futuredialog/FutureDialog";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(1);
+    const [scene, setScene] = useState(6);
     const location = useLocation();
     const name = location.state.name;
     const [isShowEndDialog, setIsShowEndDialog] = useState(false)
+
+    const [isShowFutureDialog, setIsShowFutureDialog] = useState(false)
+
+    const [playData, setPlayData] = useState<string[]>([])
 
     function nextScene() {
         setScene(scene + 1);
@@ -40,6 +45,7 @@ export default function PlayPage() {
 
     return (
         <>
+            {isShowFutureDialog && <FutureDialog next={() => {setIsShowFutureDialog(false);setIsShowEndDialog(true)}} dismiss={(_) => {setIsShowFutureDialog(false);setIsShowEndDialog(true)}}/>}
             {isShowEndDialog && <EndDialog dismiss={(_) => setIsShowEndDialog(false)}/>}
             {scene === 1 && <Scene1Page name={name} onEnded={nextScene}/>}
             {scene === 2 && <Scene2Page name={name} onEnded={nextScene}/>}
@@ -53,7 +59,9 @@ export default function PlayPage() {
             {scene === 10 && <Scene10Page name={name} onEnded={nextScene}/>}
             {scene === 11 && <Scene11Page name={name} onEnded={nextScene}/>}
             {scene === 12 && <Scene12Page name={name} onEnded={nextScene}/>}
-            {scene === 13 && <Scene13Page name={name} onEnded={() => {
+            {scene === 13 && <Scene13Page isShowFutureDialog={() => {
+                setIsShowFutureDialog(true);
+            }} name={name} onEnded={() => {
                 setIsShowEndDialog(true);
             }}/>}
         </>
