@@ -7,24 +7,25 @@ import {Button} from "@src/component/Button.style";
 import {AppStateContext} from "@provider/theme/AppStateContext";
 import Repository from "@repository/Repository";
 
+interface Scene13PageProps {
+    isShowFutureDialog: () => void,
+}
+
 export default function Scene13Page(
+    
     {
         name,
-        onEnded
-    }: SharedSceneProps
+        onEnded,
+        isShowFutureDialog
+    }: SharedSceneProps & Scene13PageProps
 ) {
 
     const {req} = useContext(AppStateContext);
     const [res, setRes] = useState<string>();
+    const [isLoading, setIsLoading] = useState(false);
 
     const gen = async () => {
-        try {
-            const res = await Repository.ai4(req);
-            setRes(res.value);
-            handleKeyDown();
-        } catch (e) {
-            console.log(e);
-        }
+        isShowFutureDialog()
     }
 
     const {chat, handleKeyDown} = useScene([
@@ -41,7 +42,7 @@ export default function Scene13Page(
             message: '당신이 만든 의성의 미래를 확인해 보시겠습니까?',
             disabledKeyDown: true,
             children: () => (
-                <Button onClick={gen}>의성 이미지 생성</Button>
+                <Button disabled={isLoading} onClick={gen}>의성 이미지 생성</Button>
             )
         },
         {
