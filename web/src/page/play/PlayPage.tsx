@@ -15,13 +15,18 @@ import Scene11Page from "@src/page/play/scene/scene11/Scene11Page";
 import Scene12Page from "@src/page/play/scene/scene12/Scene12Page";
 import Scene13Page from "@src/page/play/scene/scene13/Scene13Page";
 import FutureDialog from "@src/component/dialog/futuredialog/FutureDialog";
+import useNav from "@hook/useNav";
 
 export default function PlayPage() {
 
-    const [scene, setScene] = useState(0);
+    const {toHome} = useNav();
+    const [scene, setScene] = useState(1);
     const location = useLocation();
     const name = location.state.name;
-    const [isShowEndDialog, setIsShowEndDialog] = useState(false)
+    if (!name) {
+        toHome();
+    }
+    const [isShowEndDialog, setIsShowEndDialog] = useState(false);
 
     const [isShowFutureDialog, setIsShowFutureDialog] = useState(false)
 
